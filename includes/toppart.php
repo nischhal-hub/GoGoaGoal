@@ -27,20 +27,20 @@
             <button class="primary-btn"><a href="/issueform.html" style="text-decoration: none; color: #fafafa;">Login </a></button>
         </div>
     </header>
-    <aside class="sidebar" id="sidebar">
+    <aside class="sidebar overlay" id="sidebar">
         <div class="sidebar-container">
-            <h5>GoGoaGoal</h5>
+            <h2>GoGoaGoal</h2>
             <ul>
                 <li><img src="./assets/icons/icons8-home-32.png" height="25" width="25"
                         alt="home icon">&nbsp;&nbsp;<small><a href="/index.html">Dashboard</a></small></li>
                 <li><img src="./assets/icons/icons8-form-50.png" height="25" width="25"
-                        alt="form icon">&nbsp;&nbsp;<small><a href="/issueform.html">Issue Item</a></small></li>
+                        alt="form icon">&nbsp;&nbsp;<small><a href="/issueform.html">Futsal</a></small></li>
                 <li><img src="./assets/icons/icons8-books-24 (1).png" alt="book icon">&nbsp;&nbsp;<small><a
-                            href="/itemrecords.html">Issue records</a></small></li>
+                            href="/itemrecords.html">Nav 2</a></small></li>
                 <li><img src="./assets/icons/icons8-return-32.png" height="25" width="25"
-                        alt="book icon">&nbsp;&nbsp;<small><a href="/returnform.html">Return item</a></small></li>
+                        alt="book icon">&nbsp;&nbsp;<small><a href="/returnform.html">Reports</a></small></li>
                 <li><img src="./assets/icons/icons8-books-24 (1).png" alt="book icon">&nbsp;&nbsp;<small><a
-                            href="/returnrecords.html">Return records</a></small></li>
+                            href="/returnrecords.html">Returns</a></small></li>
             </ul>
         </div>
     </aside>
