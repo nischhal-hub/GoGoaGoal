@@ -13,28 +13,26 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io /favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io /favicon-16x16.png">
     <link rel="stylesheet" href="./global.css">
+    <script src="./script/index.js" defer></script>
     <title>GogoaGoal</title>
 </head>
 
 <body>
-    <?php
-    $image_path = '/logo.png'
-    ?>
     <header>
         <div class="head-container">
             <div class="logo">
                 <button class="secondary-btn" id="toggle">=</button>
-                <img src="logo.png" width="150" alt="gogoagoal logo">
+                <img src="./assets/logo.png" width="70" alt="gogoagoal logo">
             </div>
             <button class="primary-btn"><a href="/issueform.html" style="text-decoration: none; color: #fafafa;">Login </a></button>
         </div>
     </header>
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-container">
-            <h5>Dashboard</h5>
+            <h5>GoGoaGoal</h5>
             <ul>
                 <li><img src="./assets/icons/icons8-home-32.png" height="25" width="25"
-                        alt="home icon">&nbsp;&nbsp;<small><a href="/index.html">Home</a></small></li>
+                        alt="home icon">&nbsp;&nbsp;<small><a href="/index.html">Dashboard</a></small></li>
                 <li><img src="./assets/icons/icons8-form-50.png" height="25" width="25"
                         alt="form icon">&nbsp;&nbsp;<small><a href="/issueform.html">Issue Item</a></small></li>
                 <li><img src="./assets/icons/icons8-books-24 (1).png" alt="book icon">&nbsp;&nbsp;<small><a

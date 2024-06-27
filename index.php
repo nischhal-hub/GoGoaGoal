@@ -1,9 +1,10 @@
 <?php
 include './includes/toppart.php';
+echo '__FILE__: ' . __FILE__;
 ?>
 
 
-    <img src="assets/Gogoagoal.png" alt="logo">
+    <img src="assets/logo.png" alt="logo">
     <h1>Gogoagoal</h1>
     <h2>Gogoagoal</h2>
     <h3>Gogoagoal</h3>
