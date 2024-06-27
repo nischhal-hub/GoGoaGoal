@@ -322,3 +322,83 @@ p{
     color: var(--text);
     transition: transform 0.3s ease-in-out;
 }
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    /* border: 1px solid red; */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo button {
+    margin-right: 1rem;
+  }
+  
+  .head-container {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+  }
+  aside {
+    width: 15%;
+    background-color: var(--primary);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    color: var(--text-white);
+  }
+  .overlay {
+    left: 0;
+  }
+  
+  aside h5 {
+    margin: 5rem 0 0 1rem;
+  }
+  .sidebar-container ul {
+    padding: 15px;
+    margin: 10px 0;
+  }
+  .sidebar-container ul li {
+    list-style-type: none;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sidebar-container ul li a {
+    text-decoration: none;
+    color: var(--text-white);
+  }
+  aside.overlay {
+    animation: slidein 0.3s forwards;
+  }
+  aside:not(.overlay) {
+    animation: slideout 0.5s backwards;
+  }
+  @keyframes slidein {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @keyframes slideout {
+    from {
+      left: 0;
+    }
+    to {
+      left: -100%;
+    }
+  }
+  

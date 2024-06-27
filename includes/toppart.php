@@ -12,7 +12,37 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io /apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io /favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io /favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="./global.css">
     <title>GogoaGoal</title>
 </head>
+
+<body>
+    <?php
+    $image_path = '/logo.png'
+    ?>
+    <header>
+        <div class="head-container">
+            <div class="logo">
+                <button class="secondary-btn" id="toggle">=</button>
+                <img src="logo.png" width="150" alt="gogoagoal logo">
+            </div>
+            <button class="primary-btn"><a href="/issueform.html" style="text-decoration: none; color: #fafafa;">Login </a></button>
+        </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-container">
+            <h5>Dashboard</h5>
+            <ul>
+                <li><img src="./assets/icons/icons8-home-32.png" height="25" width="25"
+                        alt="home icon">&nbsp;&nbsp;<small><a href="/index.html">Home</a></small></li>
+                <li><img src="./assets/icons/icons8-form-50.png" height="25" width="25"
+                        alt="form icon">&nbsp;&nbsp;<small><a href="/issueform.html">Issue Item</a></small></li>
+                <li><img src="./assets/icons/icons8-books-24 (1).png" alt="book icon">&nbsp;&nbsp;<small><a
+                            href="/itemrecords.html">Issue records</a></small></li>
+                <li><img src="./assets/icons/icons8-return-32.png" height="25" width="25"
+                        alt="book icon">&nbsp;&nbsp;<small><a href="/returnform.html">Return item</a></small></li>
+                <li><img src="./assets/icons/icons8-books-24 (1).png" alt="book icon">&nbsp;&nbsp;<small><a
+                            href="/returnrecords.html">Return records</a></small></li>
+            </ul>
+        </div>
+    </aside>
