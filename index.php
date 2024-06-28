@@ -3,7 +3,7 @@ include './includes/toppart.php';
 ?>
 
 <div class="body-container">
-    <div class="sidebar-space"></div>
+    <div id="sidebar-space"></div>
     <div class="container">
         <img src="assets/logo.png" alt="logo">
         <!-- <button class="primary-btn">Primary</button>
@@ -11,7 +11,8 @@ include './includes/toppart.php';
     </div>
 
 </div>
-
+</section>
+</main>
 </body>
 
 </html>

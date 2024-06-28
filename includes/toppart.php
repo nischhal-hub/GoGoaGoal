@@ -18,30 +18,17 @@
 </head>
 
 <body>
+    <main> 
+    <?php include 'sidebar.php'?>
+    <section>
     <header>
-        <div class="sidebar-space"></div>
+        <div id="sidebar-space" class="sidebar-space"></div>
         <div class="head-container">
             <div class="logo">
                 <button class="secondary-btn" id="toggle">=</button>
                 <img src="./assets/logo.png" width="70" alt="gogoagoal logo">
             </div>
-            <button class="primary-btn"><a href="/issueform.html" style="text-decoration: none; color: #fafafa;">Login </a></button>
+            <button class="primary-btn"><a href="/issueform.html" style="text-decoration: none; color: #fafafa;">Login
+                </a></button>
         </div>
     </header>
-    <aside class="sidebar overlay" id="sidebar">
-        <div class="sidebar-container">
-            <h2>GoGoaGoal</h2>
-            <ul>
-                <li><img src="./assets/icons/icons8-home-32.png" height="25" width="25"
-                        alt="home icon">&nbsp;&nbsp;<small><a href="/index.html">Dashboard</a></small></li>
-                <li><img src="./assets/icons/icons8-form-50.png" height="25" width="25"
-                        alt="form icon">&nbsp;&nbsp;<small><a href="/issueform.html">Futsal</a></small></li>
-                <li><img src="./assets/icons/icons8-books-24 (1).png" alt="book icon">&nbsp;&nbsp;<small><a
-                            href="/itemrecords.html">Nav 2</a></small></li>
-                <li><img src="./assets/icons/icons8-return-32.png" height="25" width="25"
-                        alt="book icon">&nbsp;&nbsp;<small><a href="/returnform.html">Reports</a></small></li>
-                <li><img src="./assets/icons/icons8-books-24 (1).png" alt="book icon">&nbsp;&nbsp;<small><a
-                            href="/returnrecords.html">Returns</a></small></li>
-            </ul>
-        </div>
-    </aside>
