@@ -328,13 +328,15 @@ a{
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-top: 3rem;
     margin-bottom: 3rem;
     /* border: 1px solid red; */
   }
-  
+  .sidebar-space{
+    width: 25%;
+  }
   .logo {
     display: flex;
     align-items: center;
@@ -345,10 +347,13 @@ header {
   }
   
   .head-container {
-    width: 65%;
+    width: 80%;
     display: flex;
+    left: 18%;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    margin-top: 1rem;
     /* border: 1px solid red; */
   }
   .body-container {
@@ -357,7 +362,6 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 3rem;
-    border: 1px solid red;
   }
   .container {
     width: 65%;
@@ -368,10 +372,10 @@ header {
     /* border: 1px solid red; */
   }
   aside {
-    width: 17%;
+    min-width: 17%;
     background-color: var(--primary);
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -100%;
     color: var(--text-white);
@@ -399,6 +403,7 @@ header {
     text-decoration: none;
     color: var(--text-white);
     text-align: center;
+    font-weight: bold;
   }
   aside.overlay {
     animation: slidein 0.3s forwards;

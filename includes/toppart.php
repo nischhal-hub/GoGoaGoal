@@ -19,6 +19,7 @@
 
 <body>
     <header>
+        <div class="sidebar-space"></div>
         <div class="head-container">
             <div class="logo">
                 <button class="secondary-btn" id="toggle">=</button>
