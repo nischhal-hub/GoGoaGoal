@@ -1,6 +1,7 @@
 :root {
   /* CSS HSL */
   --primary: hsla(23, 100%, 59%, 1);
+  --primary-transparent: hsla(23, 100%, 59%, 0.9);
   --text: hsla(0, 0%, 12%, 1);
   --background: hsla(0, 0%, 100%, 1);
   --platinum: hsla(120, 4%, 91%, 1);
@@ -35,7 +36,7 @@ html {
   line-height: 1.15; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
-  font-size: 62.5%;;
+  font-size: 62.5%;
 }
 
 h1 {
@@ -255,183 +256,218 @@ template {
   display: none;
 }
 
-button, input[type="submit"], input[type="reset"] {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    }
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
 
 /*! normalize css end */
 
 /** Project css */
-h1{
-    font-size: 4rem;
-    font-family: "Montserrat", sans-serif;
+h1 {
+  font-size: 4rem;
+  font-family: "Montserrat", sans-serif;
 }
-h2{
-    font-size: 3rem;
-    font-family: "Montserrat", sans-serif;
+h2 {
+  font-size: 3rem;
+  font-family: "Montserrat", sans-serif;
 }
-h3{
-    font-size: 2rem;
-    font-family: "Montserrat", sans-serif;
+h3 {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
 }
-h4{
-    font-size: 1rem;
-    font-family: "Montserrat", sans-serif;
+h4 {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 
-p{
-    font-size: 2rem;
-    font-family: "Hind", sans-serif;
+p {
+  font-size: 2rem;
+  font-family: "Hind", sans-serif;
 }
-a{
+a {
   font-size: 1.5rem;
   font-family: "Hind", sans-serif;
 }
-.primary-btn{
-    background-color: var(--primary);
-    color: var(--text);
-    font-weight: 700;
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    font-family: "Montserrat", sans-serif;
+.primary-btn {
+  background-color: var(--primary);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-family: "Montserrat", sans-serif;
 }
 
-.primary-btn:hover{
-    transform: translateY(-5px);
-    color: var(--text);
-    transition: transform 0.3s ease-in-out;
+.primary-btn:hover {
+  transform: translateY(-5px);
+  color: var(--text);
+  transition: transform 0.3s ease-in-out;
 }
 
-.secondary-btn{
-    background-color: var(--secondary);
-    color: var(--text);
-    font-weight: 700;
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    font-family: "Montserrat", sans-serif;
-    position: relative;
+.secondary-btn {
+  background-color: var(--secondary);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
 }
 
-.secondary-btn:hover{
-    transform: translateY(-5px);
-    color: var(--text);
-    transition: transform 0.3s ease-in-out;
+.secondary-btn:hover {
+  transform: translateY(-5px);
+  color: var(--text);
+  transition: transform 0.3s ease-in-out;
 }
-.main{
-    display: flex;
+.main {
+  display: flex;
 }
 header {
-    display: flex;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-    margin-right: 2rem;
-    margin-left: 2rem;
-    /* border: 1px solid red; */
-  }
-  .sidebar-space{
-    width: 0%;
-    height: 100%;
-    transition: all 0.3s ease-in-out;
-  }
-  .show{
-    width: 20%;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo button {
-    margin-right: 1rem;
-  }
-  
-  .head-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* border: 1px solid red; */
-  }
-  .body-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-  }
-  .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    /* border: 1px solid red; */
-  }
-  aside {
-    min-width: 17%;
-    background-color: var(--primary);
-    height: 100%;
-    position: fixed;
-    top: 0;
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  /* border: 1px solid red; */
+}
+.sidebar-space {
+  width: 0%;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.show {
+  width: 20%;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo button {
+  margin-right: 1rem;
+}
+
+.head-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.body-container {
+  display: flex;
+  width: 100%;
+}
+.container {
+  width: 100%;
+  margin-left: 1.5rem;
+}
+aside {
+  min-width: 17%;
+  background-color: var(--primary);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  color: var(--text-white);
+}
+.overlay {
+  left: 0;
+}
+
+aside h2 {
+  margin: 2rem 0 0 0.5rem;
+  text-align: center;
+}
+.sidebar-container ul {
+  padding: 15px;
+  margin: 10px 0;
+}
+.sidebar-container ul li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.4rem;
+  /* border: 4px solid red; */
+}
+.sidebar-container ul li a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: medium;
+  /* border: 1px solid red; */
+  padding-top: 0.4rem;
+}
+aside.overlay,
+.sidebar-space.show {
+  animation: slidein 0.3s forwards;
+}
+aside:not(.overlay),
+.sidebar-space:not(.show) {
+  animation: slideout 0.5s backwards;
+}
+@keyframes slidein {
+  from {
     left: -100%;
-    color: var(--text-white);
   }
-  .overlay {
+  to {
     left: 0;
   }
-  
-  aside h2 {
-    margin: 2rem 0 0 .5rem;
-    text-align: center;
+}
+@keyframes slideout {
+  from {
+    left: 0;
   }
-  .sidebar-container ul {
-    padding: 15px;
-    margin: 10px 0;
+  to {
+    left: -100%;
   }
-  .sidebar-container ul li {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: .4rem;
-    /* border: 4px solid red; */
-  }
-  .sidebar-container ul li a {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 600;
-    font-size: medium;
-    /* border: 1px solid red; */
-    padding-top: .4rem;
-  }
-  aside.overlay, .sidebar-space.show {
-    animation: slidein 0.3s forwards;
-  }
-  aside:not(.overlay), .sidebar-space:not(.show) {
-    animation: slideout 0.5s backwards;
-  }
-  @keyframes slidein {
-    from {
-      left: -100%;
-    }
-    to {
-      left: 0;
-    }
-  }
-  @keyframes slideout {
-    from {
-      left: 0;
-    }
-    to {
-      left: -100%;
-    }
-  }
-  
+}
+
+.slot-container {
+  width: 100%;
+}
+.greyGridTable {
+  width: 98%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table tr td,
+th {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: larger;
+}
+
+
+
+.greyGridTable th,
+.greyGridTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.greyGridTable td:nth-child(even) {
+  background-color: var(--primary);
+}
+.greyGridTable th:nth-child(even) {
+  background-color: var(--primary);
+}
+
+.greyGridTable th:hover {
+  background-color: var(--primary);
+}
+.greyGridTable td:hover {
+  background-color: var(--secondary);
+}
