@@ -23,9 +23,12 @@
   /* Conic Gradients */
   --gradient-conic: conic-gradient(from 0deg, #ff7f30ff, #ffffffff);
   --gradient-conic-reverse: conic-gradient(from 0deg, #ffffffff, #ff7f30ff);
+
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: "Hind", sans-serif;
 }
 
-/** normalize css **/
+
 body {
   width: 100%;
   background: var(--background);
@@ -273,28 +276,28 @@ input[type="reset"] {
 /** Project css */
 h1 {
   font-size: 4rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
 }
 h2 {
   font-size: 3rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
 }
 h3 {
   font-size: 2rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
 }
 h4 {
   font-size: 1rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
 }
 
 p {
   font-size: 2rem;
-  font-family: "Hind", sans-serif;
+  font-family: var(--font-secondary);
 }
 a {
   font-size: 1.5rem;
-  font-family: "Hind", sans-serif;
+  font-family: var(--font-secondary);
 }
 .primary-btn {
   background-color: var(--primary);
@@ -319,7 +322,7 @@ a {
   font-size: 1.5rem;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
   position: relative;
 }
 
@@ -337,7 +340,7 @@ header {
   margin-bottom: 3rem;
   margin-right: 2rem;
   margin-left: 2rem;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 .sidebar-space {
   width: 0%;
@@ -365,11 +368,18 @@ header {
 }
 .body-container {
   display: flex;
-  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  border: 1px solid red;
+
+}
+.body-container h3{
+  padding: .5rem 0;
 }
 .container {
   width: 100%;
-  margin-left: 1.5rem;
 }
 aside {
   min-width: 17%;
@@ -437,15 +447,15 @@ aside:not(.overlay),
   width: 100%;
 }
 .greyGridTable {
-  width: 98%;
+  width: 100%;
   border: 1px solid black;
   border-collapse: collapse;
 }
 table tr td,
 th {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-secondary);
   text-align: center;
-  font-size: larger;
+  font-size: 1.5rem;
 }
 
 
