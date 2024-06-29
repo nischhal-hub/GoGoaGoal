@@ -36,15 +36,10 @@ body {
 }
 
 html {
-  line-height: 1.15; /* 1 */
+  line-height: 1; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
   font-size: 62.5%;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
 }
 
 dl dl,
@@ -368,15 +363,17 @@ header {
 }
 .body-container {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 0;
   margin-bottom: 3rem;
   margin-right: 2rem;
   margin-left: 2rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
 }
-.body-container h3{
-  padding: .5rem 0;
+.body-container h2{
+  margin: 1rem 0;
+}.body-container h3{
+  margin-top: 1rem;
 }
 .container {
   width: 100%;
