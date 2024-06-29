@@ -456,6 +456,7 @@ th {
   padding: 8px;
   text-align: center;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .greyGridTable td:nth-child(even) {
@@ -466,8 +467,8 @@ th {
 }
 
 .greyGridTable th:hover {
-  background-color: var(--primary);
+  background-color: var(--primary-transparent);
 }
 .greyGridTable td:hover {
-  background-color: var(--secondary);
+  background-color: var(--primary-transparent);
 }
