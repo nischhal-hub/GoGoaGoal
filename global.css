@@ -332,10 +332,10 @@ a {
 header {
   display: flex;
   margin-top: 2rem;
-  margin-bottom: 3rem;
-  margin-right: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 3rem;
   margin-left: 2rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .sidebar-space {
   width: 0%;
@@ -365,14 +365,14 @@ header {
   display: flex;
   margin-top: 0;
   margin-bottom: 3rem;
-  margin-right: 2rem;
+  margin-right: 3rem;
   margin-left: 2rem;
   /* border: 1px solid red; */
 
 }
-.body-container h2{
-  margin: 1rem 0;
-}.body-container h3{
+.body-container h3{
+  margin: 1rem 0 2rem 0;
+}.slot-container h3{
   margin-top: 1rem;
 }
 .container {
