@@ -12,7 +12,6 @@ include './includes/toppart.php';
     </div>
 
 </div>
-</section>
 </main>
 </body>
 
