@@ -371,9 +371,7 @@ header {
 
 }
 .body-container h3{
-  margin: 1rem 0 2rem 0;
-}.slot-container h3{
-  margin-top: 1rem;
+  margin: 2rem 0 2rem 0;
 }
 .container {
   width: 100%;
@@ -477,5 +475,82 @@ th {
   background-color: var(--primary-transparent);
 }
 .greyGridTable td:hover {
+  background-color: var(--primary-transparent);
+}
+
+.reports{
+  display: flex;
+  width: 100%;
+}
+.slots-graph {
+  width: 50%;
+  margin: 1rem;
+  /* border:1px solid red; */
+}
+.income-graph{
+  width: 50%;
+  margin: 1rem;
+}
+.booking-grid-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.booking-grid-table td{
+  font-size: 1.4rem;
+}
+
+.booking-grid-table th,
+.booking-grid-table td {
+  border: 1px solid #ddd;
+  padding: .5rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.booking-grid-table td:nth-child(even) {
+  background-color: var(--primary);
+}
+.booking-grid-table th:nth-child(even) {
+  background-color: var(--primary);
+}
+
+.booking-grid-table th:hover {
+  background-color: var(--primary-transparent);
+}
+.booking-grid-table td:hover {
+  background-color: var(--primary-transparent);
+}
+
+.income-grid-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.income-grid-table td{
+  font-size: 1.4rem;
+}
+
+.income-grid-table th,
+.income-grid-table td {
+  border: 1px solid #ddd;
+  padding: .5rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.income-grid-table td:nth-child(even) {
+  background-color: var(--primary);
+}
+.income-grid-table th:nth-child(even) {
+  background-color: var(--primary);
+}
+
+.income-grid-table th:hover {
+  background-color: var(--primary-transparent);
+}
+.income-grid-table td:hover {
   background-color: var(--primary-transparent);
 }
