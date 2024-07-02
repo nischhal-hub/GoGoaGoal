@@ -36,7 +36,7 @@
     <div class="summary">
         <h3>Today's Reports</h3>
         <div class="summary-container">
-        <div class="box">
+        <div class="box" style="margin-left: 0;">
             <div class="result">
                 <p>10</p>
                 <p>Total Bookings</p>
@@ -45,31 +45,31 @@
                 <img src="./assets/icons/icons8-booking-64.png" alt="booking" width="44" height="44">
             </div>
         </div>
-        <div class="box">
+        <div class="box" >
             <div class="result">
                 <p>10</p>
-                <p>Total Bookings</p>
+                <p>Total Earning</p>
             </div>
             <div class="icon-container">
-                <img src="./assets/icons/icons8-booking-64.png" alt="booking" width="44" height="44">
+                <img src="./assets/icons/icons8-earning-64.png" alt="booking" width="44" height="44">
             </div>
         </div>
         <div class="box">
             <div class="result">
                 <p>10</p>
-                <p>Total Bookings</p>
+                <p>Total Expenditure</p>
             </div>
             <div class="icon-container">
-                <img src="./assets/icons/icons8-booking-64.png" alt="booking" width="44" height="44">
+                <img src="./assets/icons/icons8-cost-48.png" alt="booking" width="44" height="44">
             </div>
         </div>
-        <div class="box">
+        <div class="box" style="margin-right: 0;">
             <div class="result">
                 <p>10</p>
-                <p>Total Bookings</p>
+                <p>Total Staffs</p>
             </div>
             <div class="icon-container">
-                <img src="./assets/icons/icons8-booking-64.png" alt="booking" width="44" height="44">
+                <img src="./assets/icons/icons8-staff-48.png" alt="booking" width="44" height="44">
             </div>
         </div>
         </div>

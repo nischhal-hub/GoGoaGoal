@@ -461,10 +461,10 @@ th {
 }
 
 .greyGridTable td:nth-child(even) {
-  background-color: var(--primary);
+  background-color: var(--secondary);
 }
 .greyGridTable th:nth-child(even) {
-  background-color: var(--primary);
+  background-color: var(--secondary);
 }
 
 .greyGridTable th:hover {
@@ -591,4 +591,15 @@ th {
   justify-content: space-between;
   margin-left: 1rem;
   margin-right: 1rem;
+  cursor: pointer;
+}
+
+.box:hover{
+  background-color: var(--secondary);
+  transition: all 0.3s ease-in-out;
+}
+
+.box:hover .icon-container{
+  border-color: var(--primary);
+  transition: all 0.3s ease-in-out;
 }
