@@ -438,6 +438,8 @@ aside:not(.overlay),
 
 .slot-container {
   width: 100%;
+  padding: .5rem;
+  border-radius: 1rem;
 }
 .greyGridTable {
   width: 100%;
@@ -550,6 +552,7 @@ th {
 .income-grid-table td:hover {
   background-color: var(--primary-transparent);
 }
+
 .summary-container {
   display: flex;
   justify-content: space-between;

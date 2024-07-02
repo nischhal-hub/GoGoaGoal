@@ -1,7 +1,7 @@
 <section>
-    <h3>Dashboard</h3>
+    <h2>Dashboard</h2>
     <div class="slot-container">
-        <p>Booked slots</p>
+        <h3>Booked slots</h3>
         <table class="greyGridTable">
             <tr>
                 <th>6:00-7:00</th>
@@ -73,5 +73,8 @@
             </div>
         </div>
         </div>
+    </div>
+    <div>
+        <h3>Booking details</h3>
     </div>
 </section>
