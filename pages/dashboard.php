@@ -33,9 +33,45 @@
             </tr>
         </table>
     </div>
-    <div class="summary-container">
-        <div class="box1">
-
+    <div class="summary">
+        <h3>Today's Reports</h3>
+        <div class="summary-container">
+        <div class="box">
+            <div class="result">
+                <p>10</p>
+                <p>Total Bookings</p>
+            </div>
+            <div class="icon-container">
+                <img src="./assets/icons/icons8-booking-64.png" alt="booking" width="44" height="44">
+            </div>
+        </div>
+        <div class="box">
+            <div class="result">
+                <p>10</p>
+                <p>Total Bookings</p>
+            </div>
+            <div class="icon-container">
+                <img src="./assets/icons/icons8-booking-64.png" alt="booking" width="44" height="44">
+            </div>
+        </div>
+        <div class="box">
+            <div class="result">
+                <p>10</p>
+                <p>Total Bookings</p>
+            </div>
+            <div class="icon-container">
+                <img src="./assets/icons/icons8-booking-64.png" alt="booking" width="44" height="44">
+            </div>
+        </div>
+        <div class="box">
+            <div class="result">
+                <p>10</p>
+                <p>Total Bookings</p>
+            </div>
+            <div class="icon-container">
+                <img src="./assets/icons/icons8-booking-64.png" alt="booking" width="44" height="44">
+            </div>
+        </div>
         </div>
     </div>
 </section>

@@ -28,7 +28,6 @@
   --font-secondary: "Hind", sans-serif;
 }
 
-
 body {
   width: 100%;
   background: var(--background);
@@ -368,9 +367,8 @@ header {
   margin-right: 3rem;
   margin-left: 2rem;
   /* border: 1px solid red; */
-
 }
-.body-container h3{
+.body-container h3 {
   margin: 2rem 0 2rem 0;
 }
 .container {
@@ -453,8 +451,6 @@ th {
   font-size: 1.5rem;
 }
 
-
-
 .greyGridTable th,
 .greyGridTable td {
   border: 1px solid #ddd;
@@ -478,7 +474,7 @@ th {
   background-color: var(--primary-transparent);
 }
 
-.reports{
+.reports {
   display: flex;
   width: 100%;
 }
@@ -487,7 +483,7 @@ th {
   margin: 1rem;
   /* border:1px solid red; */
 }
-.income-graph{
+.income-graph {
   width: 50%;
   margin: 1rem;
 }
@@ -496,14 +492,14 @@ th {
   border-collapse: collapse;
 }
 
-.booking-grid-table td{
+.booking-grid-table td {
   font-size: 1.4rem;
 }
 
 .booking-grid-table th,
 .booking-grid-table td {
   border: 1px solid #ddd;
-  padding: .5rem;
+  padding: 0.5rem;
   text-align: center;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -528,14 +524,14 @@ th {
   border-collapse: collapse;
 }
 
-.income-grid-table td{
+.income-grid-table td {
   font-size: 1.4rem;
 }
 
 .income-grid-table th,
 .income-grid-table td {
   border: 1px solid #ddd;
-  padding: .5rem;
+  padding: 0.5rem;
   text-align: center;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -553,4 +549,46 @@ th {
 }
 .income-grid-table td:hover {
   background-color: var(--primary-transparent);
+}
+.summary-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summary-container .box {
+  width: 32%;
+  padding: 1rem;
+  background-color: var(--primary);
+  color: var(--text-white);
+  border-radius: 0.5rem;
+}
+.result {
+  padding: 1rem;
+}
+.result p:first-child {
+  font-family: var(--font-primary);
+  font-weight: 700;
+}
+
+.result p:last-child {
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.icon-container {
+  width: 5.5rem;
+  height: 5.5rem;
+  border: .2rem solid #fafafa;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  display: flex;
+  align-items: center;
+  width: auto;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
