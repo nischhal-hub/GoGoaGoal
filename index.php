@@ -3,7 +3,7 @@ include './includes/toppart.php';
 ?>
 
 <div class="body-container">
-    <div id="sidebar-space"></div>
+    <div id="sidebar-space" class="sidebar-space"></div>
     <div class="container">
         <?php include_once './pages/dashboard.php'?>
         <!-- <img src="assets/logo.png" alt="logo"> -->
