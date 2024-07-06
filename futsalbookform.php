@@ -8,9 +8,7 @@
             <div id="modal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <p><img src="./assets/icons/icons8-tick.gif" alt="tick gif">&nbsp;&nbsp;&nbsp;&nbsp;Issue
-                        submitted
-                        succesfully.</p>
+                    <p><img src="./assets/icons/icons8-tick.gif" alt="tick gif">&nbsp;&nbsp;&nbsp;&nbsp;Futsal Booked Successfully.</p>
                 </div>
             </div>
 
@@ -50,7 +48,7 @@
                     <textarea id="specialRequests" name="specialRequests" rows="4"></textarea>
                 </div>
                 <div>
-                    <button class="secondary-btn" type="submit">Submit</button>
+                    <button class="secondary-btn" type="submit" id="myBtn">Submit</button>
                 </div>
             </form>
 
