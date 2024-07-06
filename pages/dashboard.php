@@ -78,7 +78,7 @@
     <div>
         <h3>Booking details</h3>
         <input type="date">
-        <table class="greyGridTable">
+        <table class="booking-details-table">
             <tr>
                 <th>S.N</th>
                 <th>Booking initiator</th>
@@ -88,6 +88,20 @@
             </tr>
             <tr>
                 <td>1</td>
+                <td>John Doe</td>
+                <td>9876543210</td>
+                <td>6:00-7:00</td>
+                <td>pending</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>John Doe</td>
+                <td>9876543210</td>
+                <td>6:00-7:00</td>
+                <td>pending</td>
+            </tr>
+            <tr>
+                <td>3</td>
                 <td>John Doe</td>
                 <td>9876543210</td>
                 <td>6:00-7:00</td>

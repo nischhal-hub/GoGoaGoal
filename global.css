@@ -293,6 +293,18 @@ a {
   font-size: 1.5rem;
   font-family: var(--font-secondary);
 }
+input[type="date"]{
+  font-family: var(--font-primary);
+  padding: .5rem;
+  margin-bottom: 2rem;
+  border: none;
+  border-bottom: 2px solid var(--primary);
+}
+input[type="date"]:focus-visible{
+  outline: 2px solid var(--primary);
+  transition: all 0.3s ease-in-out;
+  
+}
 .primary-btn {
   background-color: var(--primary);
   color: var(--text);
@@ -608,30 +620,26 @@ th {
 }
 
 
-.greyGridTable {
+.booking-details-table {
   width: 100%;
   border: 1px solid black;
   border-collapse: collapse;
 }
-.greyGridTable th,
-.greyGridTable td {
+.booking-details-table th,
+.booking-details-table td,
+.booking-details-table tr {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
-.greyGridTable td:nth-child(even) {
-  background-color: var(--secondary);
-}
-.greyGridTable th:nth-child(even) {
+.booking-details-table tr:nth-child(odd) {
   background-color: var(--secondary);
 }
 
-.greyGridTable th:hover {
+.booking-details-table tr:hover {
   background-color: var(--primary-transparent);
 }
-.greyGridTable td:hover {
-  background-color: var(--primary-transparent);
-}
+
