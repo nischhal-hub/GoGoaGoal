@@ -31,7 +31,7 @@
 body {
   width: 100%;
   background: var(--background);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 html {
@@ -441,11 +441,6 @@ aside:not(.overlay),
   padding: .5rem;
   border-radius: 1rem;
 }
-.greyGridTable {
-  width: 100%;
-  border: 1px solid black;
-  border-collapse: collapse;
-}
 table tr td,
 th {
   font-family: var(--font-secondary);
@@ -453,6 +448,11 @@ th {
   font-size: 1.5rem;
 }
 
+.greyGridTable {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
 .greyGridTable th,
 .greyGridTable td {
   border: 1px solid #ddd;
@@ -605,4 +605,33 @@ th {
 .box:hover .icon-container{
   border-color: var(--primary);
   transition: all 0.3s ease-in-out;
+}
+
+
+.greyGridTable {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.greyGridTable th,
+.greyGridTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.greyGridTable td:nth-child(even) {
+  background-color: var(--secondary);
+}
+.greyGridTable th:nth-child(even) {
+  background-color: var(--secondary);
+}
+
+.greyGridTable th:hover {
+  background-color: var(--primary-transparent);
+}
+.greyGridTable td:hover {
+  background-color: var(--primary-transparent);
 }
