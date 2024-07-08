@@ -642,6 +642,16 @@ th {
 .booking-details-table tr:hover {
   background-color: var(--primary-transparent);
 }
+ .booking-details input[type="date"] {
+  max-width: 15%;
+ }
+
+ .filter-container{
+  display: flex;
+  justify-content:flex-start;
+  gap: 2rem;
+  align-items: center;
+ }
 
 /** Form */
 form {

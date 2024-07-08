@@ -75,9 +75,12 @@
         </table>
     </div>
     
-    <div>
+    <div class="booking-details">
         <h3>Booking details</h3>
-        <input type="date">
+        <div class="filter-container">
+            <input type="date">
+            <button class="primary-btn">Filter</button>
+        </div>
         <table class="booking-details-table">
             <tr>
                 <th>S.N</th>
