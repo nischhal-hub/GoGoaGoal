@@ -56,5 +56,5 @@ CREATE TABLE IF NOT EXISTS expenditure (
     exp_name VARCHAR(255) NOT NULL,
     exp_item_num INT NOT NULL,
     exp_amount DECIMAL(10, 2) NOT NULL,
-    exp_date DATE NOT NULL,
+    exp_date DATE NOT NULL
 );
