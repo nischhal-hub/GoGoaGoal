@@ -713,7 +713,6 @@ select {
   margin-bottom: 1.5rem;
   border: none;
   border-bottom: 1px solid var(--primary);
-  border-radius: .5rem;
   background-color: none;
 }
 
