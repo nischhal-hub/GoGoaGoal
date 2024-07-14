@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io /favicon-16x16.png">
     <link rel="stylesheet" href="./global.css">
     <script src="./script/index.js" defer></script>
+    <script src="https://kit.fontawesome.com/c8e33eec07.js" crossorigin="anonymous"></script>
     <title>GogoaGoal</title>
 </head>
 

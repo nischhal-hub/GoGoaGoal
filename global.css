@@ -410,10 +410,18 @@ aside h2 {
 .sidebar-container ul li {
   list-style-type: none;
   display: flex;
+  
   align-items: center;
   cursor: pointer;
   padding: 0.4rem;
   /* border: 4px solid red; */
+}
+.sidebar-icon{
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 .sidebar-container ul li:hover {
   background-color: var(--secondary);
@@ -614,16 +622,6 @@ th {
   margin-left: 1rem;
   margin-right: 1rem;
   cursor: pointer;
-}
-
-.box:hover{
-  background-color: var(--secondary);
-  transition: all 0.3s ease-in-out;
-}
-
-.box:hover .icon-container{
-  border-color: var(--primary);
-  transition: all 0.3s ease-in-out;
 }
 
 /** Booking Details table  */
