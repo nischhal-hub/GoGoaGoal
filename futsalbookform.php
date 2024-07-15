@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($paymentStatus)) {
         $errormsg .= "Payment status is required";
     }
-    
+
 
     $sql = "INSERT INTO bookings (initiator, initiator_contact, booking_date, booking_slot, payment_status) 
 VALUES (?,?,?,?,?);
@@ -67,7 +67,8 @@ VALUES (?,?,?,?,?);
             <div id="modal" class="modal show">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <p id="modal-message"><img src="./assets/icons/icons8-tick.gif" alt="tick gif">&nbsp;&nbsp;&nbsp;&nbsp;Futsal Booked
+                    <p id="modal-message"><img src="./assets/icons/icons8-tick.gif"
+                            alt="tick gif">&nbsp;&nbsp;&nbsp;&nbsp;Futsal Booked
                         Successfully.</p>
                 </div>
             </div>
@@ -129,21 +130,21 @@ VALUES (?,?,?,?,?);
 
 </body>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const errorMsg = '<?php echo $errormsg; ?>';
-        if(errorMsg){
-        const modal = document.getElementById('modal');
-        const modalMessage = document.getElementById('modal-message');
-        if(modal && modalMessage){
-            modal.style.display = 'block';
-            modalMessage.innerHTML = `<i class="fa-solid fa-circle-xmark fa-beat-fade fa-2xl" style="color: #e01b24; padding-right: 1rem;"></i> ${errorMsg}`;
-        var closeBtn = document.getElementsByClassName('close')[0];
-        closeBtn.onclick = function() {
-            modal.style.display = 'none';
+        if (errorMsg) {
+            const modal = document.getElementById('modal');
+            const modalMessage = document.getElementById('modal-message');
+            if (modal && modalMessage) {
+                modal.style.display = 'block';
+                modalMessage.innerHTML = `<i class="fa-solid fa-circle-xmark fa-beat-fade fa-2xl" style="color: #e01b24; padding-right: 1rem;"></i> ${errorMsg}`;
+                var closeBtn = document.getElementsByClassName('close')[0];
+                closeBtn.onclick = function () {
+                    modal.style.display = 'none';
+                }
+            }
+
         }
-        }
-        
-    }
     });
 </script>
 
