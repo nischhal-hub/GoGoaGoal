@@ -1,30 +1,15 @@
 <?php
     $bookingListSql = "SELECT * FROM bookings";
-    $bookingSummarySql = "SELECT COUNT(*) FROM bookings";
-    $earningSummarySql = "SELECT SUM(amount) FROM checkout";
-    $expenditureSummarySql = "SELECT SUM(exp_amount) FROM expenditure";
-    $staffsSql = "SELECT COUNT(*) FROM staff";
-    
     $summaryQueries = [
-        "SELECT COUNT(*) FROM bookings",
-        "SELECT SUM(amount) FROM checkout",
-        "SELECT SUM(exp_amount) FROM expenditure",
-        "SELECT COUNT(*) FROM staff"
+        "bookingSummarySql"=>"SELECT COUNT(*) FROM bookings",
+        "earningSummarySql"=>"SELECT SUM(amount) FROM checkout",
+        "expenditureSummarySql"=>"SELECT SUM(exp_amount) FROM expenditure",
+        "staffsSql"=>"SELECT COUNT(*) FROM staff"
     ];
-    $resultArray = ["bookingSummarySql"=>0,"earningSummarySql"=>0,"expenditureSummarySql"=>0,"staffsSql"=>0];
-    $resultKeys = array_keys($resultArray);
-    $index = 0;
-    foreach ($summaryQueries as $key=>$query){
-        if($result = $conn->query($query)) {
-            $row = $result->fetch_assoc();
-            $resultArray[$resultKeys[$index]] = reset($row);
-        }
-        else{
-            echo 'Error:'.$conn->error.".<br>";
-        }
-        $index++;
-    }
+    $currentDate = date("Y-m-d");
+    $bookedSlotQuery = "SELECT * FROM bookings WHERE booking_date = '$currentDate' ";
 
+    // FOR FETCHING BOOKING LIST
     $result = $conn->query($bookingListSql);
     $bookings = [];
     $i = 0;
@@ -33,6 +18,29 @@
             $bookings[] = $row;
         }
     }
+
+    //FOR FETCHING SUMMARY LIST
+    $resultArray = ["bookingSummarySql"=>0,"earningSummarySql"=>0,"expenditureSummarySql"=>0,"staffsSql"=>0];
+    foreach ($summaryQueries as $key=>$query){
+        if($result = $conn->query($query)) {
+            $row = $result->fetch_assoc();
+            $resultArray[$key] = reset($row);
+        }
+        else{
+            echo 'Error:'.$conn->error.".<br>";
+        }
+    }
+    
+    // FOR FETCHING BOOKED SLOTS
+    $result = $conn->query($bookedSlotQuery);
+    $bookings = [];
+    if($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $bookings[] = $row;
+        }
+    }
+    $bookedSlots = array_column($bookings, 'booking_slot');
+
     $conn->close();
 ?>
 <section>
@@ -79,7 +87,7 @@
         </div>
     </div>
     <div class="slot-container">
-        <h3>Booked slots</h3>
+        <h3>Today's Booked slots</h3>
         <table class="greyGridTable">
             <tr>
                 <th>6:00-7:00</th>
@@ -94,20 +102,21 @@
                 <th>15:00-16:00</th>
                 <th>16:00-17:00</th>
                 <th>17:00-18:00</th>
+                <th>18:00-19:00</th>
             </tr>
             <tr>
-                <td>booked</td>
-                <td>booked</td>
-                <td>booked</td>
-                <td>booked</td>
-                <td>booked</td>
-                <td>booked</td>
-                <td>booked</td>
-                <td>booked</td>
-                <td>booked</td>
-                <td>booked</td>
-                <td>booked</td>
-                <td>booked</td>
+                <?php
+                    $timeArr = ['6-7 AM', '7-8 AM', '8-9 AM', '9-10 AM', '10-11 AM', '11-12 PM', 
+                               '12-1 PM', '1-2 PM', '2-3 PM', '3-4 PM', '4-5 PM', '5-6 PM', 
+                               '6-7 PM'];
+                    foreach ($timeArr as $time) {
+                        if(in_array($time, $bookedSlots)) {
+                            echo "<td style='font-weight: bold'><i class='fa-solid fa-fire fa-shake' style='color: var(--primary);'></i>&nbsp;Booked</td>";
+                        } else {
+                            echo "<td>Vacant</td>";
+                        }
+                    }
+                ?>
             </tr>
         </table>
     </div>
@@ -123,6 +132,7 @@
                 <th>S.N</th>
                 <th>Booking initiator</th>
                 <th>Contact</th>
+                <th>Booked Date</th>
                 <th>Booked time</th>
                 <th>Payment Status</th>
             </tr>
@@ -132,6 +142,7 @@
                 <td><?= $i ?></td>
                 <td><?= $booking['initiator'] ?></td>
                 <td><?= $booking['initiator_contact'] ?></td>
+                <td><?= $booking['booking_date'] ?></td>
                 <td><?= $booking['booking_slot'] ?></td>
                 <td><?= $booking['payment_status'] ?></td>
             </tr>

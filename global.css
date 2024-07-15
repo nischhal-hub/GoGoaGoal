@@ -496,12 +496,6 @@ th {
   background-color: var(--secondary);
 }
 
-.greyGridTable th:hover {
-  background-color: var(--primary-transparent);
-}
-.greyGridTable td:hover {
-  background-color: var(--primary-transparent);
-}
 
 .reports {
   display: flex;
