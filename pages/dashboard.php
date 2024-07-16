@@ -160,18 +160,23 @@ $conn->close();
                 <th>Booked time</th>
                 <th>Payment Status</th>
             </tr>
-            <?php foreach ($bookingsArr as $list): ?>
-                <?php $i++; ?>
+            <?php if (empty($bookingsArr)): ?>
                 <tr>
-                    <td><?= $i ?></td>
-                    <td><?= $list['initiator'] ?></td>
-                    <td><?= $list['initiator_contact'] ?></td>
-                    <td><?= $list['booking_date'] ?></td>
-                    <td><?= $list['booking_slot'] ?></td>
-                    <td><?= $list['payment_status'] ?></td>
+                    <td colspan="6" style="text-align: center; font-size: 2rem;">No data to show</td>
                 </tr>
-            <?php endforeach; ?>
-
+            <?php else: ?>
+                <?php foreach ($bookingsArr as $list): ?>
+                    <?php $i++; ?>
+                    <tr>
+                        <td><?= $i ?></td>
+                        <td><?= $list['initiator'] ?></td>
+                        <td><?= $list['initiator_contact'] ?></td>
+                        <td><?= $list['booking_date'] ?></td>
+                        <td><?= $list['booking_slot'] ?></td>
+                        <td><?= $list['payment_status'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </table>
     </div>
 </section>
