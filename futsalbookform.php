@@ -15,19 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $paymentStatus = validateInput($_POST['payment']);
 
     if (empty($bookersName) || !preg_match("/^[A-Za-z\s]+$/", $bookersName)) {
-        $errormsg .= "Invalid name";
+        $errormsg = "Invalid name";
     }
     if (empty($bookersContact) || !preg_match("/^\d{10}$/", $bookersContact)) {
-        $errormsg .= "Invalid contact number";
+        $errormsg = "Invalid contact number";
     }
     if (empty($bookingDate)) {
-        $errormsg .= "Booking date is required";
+        $errormsg = "Booking date is required";
     }
     if (empty($bookingTime)) {
-        $errormsg .= "Booking time slot is required";
+        $errormsg = "Booking time slot is required";
     }
     if (empty($paymentStatus)) {
-        $errormsg .= "Payment status is required";
+        $errormsg = "Payment status is required";
     }
 
 

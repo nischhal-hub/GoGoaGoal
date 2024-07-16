@@ -147,7 +147,7 @@ $conn->close();
         <h3>Booking details</h3>
         <div class="filter-container">
             <form class="filter-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get" style="width:100%; border-radius:none; box-shadow:none; padding:0;margin:0; gap:2rem;">
-                <input type="date" name="filterDate" style="width: 200px;">
+                <input type="date" name="filterDate" style="width: 200px;" required>
                 <button class="primary-btn" style="margin-left:2rem;"><i class="fa-solid fa-filter"></i>&nbsp;Filter</button>
             </form>
         </div>
