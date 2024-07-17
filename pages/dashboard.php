@@ -42,8 +42,8 @@ $bookedSlots = array_column($bookings, 'booking_slot');
 
 
 // FOR date filter
-if($_SERVER["REQUEST_METHOD"] == "GET"){
-    if(isset($_GET['filterDate'])){
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if (isset($_GET['filterDate'])) {
         $filterDate = $_GET['filterDate'];
         $bookedSlotQuery = "SELECT * FROM bookings WHERE booking_date = '$filterDate' ";
         $bookingsArr = [];
@@ -124,7 +124,7 @@ $conn->close();
                     '6-7 PM'
                 ];
                 foreach ($timeArr as $time) {
-                    echo '<th>6:00-7:00</th>';
+                    echo "<th>$time</th>";
                 }
                 ?>
             </tr>
@@ -146,9 +146,11 @@ $conn->close();
     <div class="booking-details">
         <h3>Booking details</h3>
         <div class="filter-container">
-            <form class="filter-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get" style="width:100%; border-radius:none; box-shadow:none; padding:0;margin:0; gap:2rem;">
+            <form class="filter-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get"
+                style="width:100%; border-radius:none; box-shadow:none; padding:0;margin:0; gap:2rem;">
                 <input type="date" name="filterDate" style="width: 200px;" required>
-                <button class="primary-btn" style="margin-left:2rem;"><i class="fa-solid fa-filter"></i>&nbsp;Filter</button>
+                <button class="primary-btn" style="margin-left:2rem;"><i
+                        class="fa-solid fa-filter"></i>&nbsp;Filter</button>
             </form>
         </div>
         <table class="booking-details-table">
@@ -159,6 +161,7 @@ $conn->close();
                 <th>Booked Date</th>
                 <th>Booked time</th>
                 <th>Payment Status</th>
+                <th>Action</th>
             </tr>
             <?php if (empty($bookingsArr)): ?>
                 <tr>
@@ -174,6 +177,12 @@ $conn->close();
                         <td><?= $list['booking_date'] ?></td>
                         <td><?= $list['booking_slot'] ?></td>
                         <td><?= $list['payment_status'] ?></td>
+                        <td>
+                            <button class="primary-btn" style="font-size:1.5rem; background-color:green;"><i
+                                    class="fa-solid fa-pen-to-square" style="color:white;"></i></button>
+                            <button class="primary-btn" style="font-size:1.5rem; background-color:red;"><i
+                                    class="fa-solid fa-trash" style="color:white;"></i></button>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
