@@ -69,7 +69,7 @@ $conn->close();
                     <p>Total Bookings</p>
                 </div>
                 <div class="icon-container">
-                    <i class="fa-brands fa-font-awesome fa-2xl" style="color: white"></i>
+                    <i class="fa-brands fa-font-awesome fa-2xl" style="color: var(--primary)"></i>
                 </div>
             </div>
             <div class="box">
@@ -79,7 +79,7 @@ $conn->close();
                     <p>Total Earning</p>
                 </div>
                 <div class="icon-container">
-                    <i class="fa-solid fa-money-bills fa-2xl" style="color: white"></i>
+                    <i class="fa-solid fa-money-bills fa-2xl" style="color: var(--primary)"></i>
                 </div>
             </div>
             <div class="box">
@@ -89,7 +89,7 @@ $conn->close();
                     <p>Total Expenditure</p>
                 </div>
                 <div class="icon-container">
-                    <i class="fa-solid fa-file-invoice-dollar fa-2xl" style="color: white"></i>
+                    <i class="fa-solid fa-file-invoice-dollar fa-2xl" style="color: var(--primary)"></i>
                 </div>
             </div>
             <div class="box" style="margin-right: 0;">
@@ -98,7 +98,7 @@ $conn->close();
                     <p>Total Staffs</p>
                 </div>
                 <div class="icon-container">
-                    <i class="fa-solid fa-users fa-2xl" style="color:white"></i>
+                    <i class="fa-solid fa-users fa-2xl" style="color:var(--primary)"></i>
                 </div>
             </div>
         </div>
@@ -178,10 +178,19 @@ $conn->close();
                         <td><?= $list['booking_slot'] ?></td>
                         <td><?= $list['payment_status'] ?></td>
                         <td>
-                            <button class="btn-success" style="font-size:1.5rem;"><i
-                                    class="fa-solid fa-pen-to-square"></i></button>
-                            <button class="btn-danger" style="font-size:1.5rem;"><i
-                                    class="fa-solid fa-trash"></i></button>
+                            <div class="action-container">
+                                <form class="edit-form" action="#">
+                                <input type="hidden" name="id" value="<?php echo $list['booking_id'] ?>">
+                                <button class="btn-success" style="font-size:1.5rem;"><i
+                                class="fa-solid fa-pen-to-square"></i></button>
+                                </form>
+                                <form class="delete-form" action="./proccess/deletebookings.php">
+                                    <input type="hidden" name="id" value="<?php echo $list['booking_id'] ?>">
+                                    <button class="btn-danger" style="font-size:1.5rem;"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </div>
+
                         </td>
                     </tr>
                 <?php endforeach; ?>

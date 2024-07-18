@@ -29,9 +29,19 @@
                             <td><?= htmlspecialchars($list['staff_email']) ?></td>
                             <td><?= htmlspecialchars($list['staff_join_date']) ?></td>
                             <td>
-                                <button class="primary-btn" style="font-size:1.5rem; background-color:green;"><i class="fa-solid fa-pen-to-square" style="color:white;"></i></button>
-                                <button class="primary-btn" style="font-size:1.5rem; background-color:red;"><i class="fa-solid fa-trash" style="color:white;"></i></button>
-                            </td>
+                            <div class="action-container">
+                                <form class="edit-form" action="#">
+                                <input type="hidden" name="id" value="<?php echo $list['staff_id'] ?>">
+                                <button class="btn-success" style="font-size:1.5rem;"><i
+                                class="fa-solid fa-pen-to-square"></i></button>
+                                </form>
+                                <form class="delete-form" action="./proccess/deletebookings.php">
+                                    <input type="hidden" name="id" value="<?php echo $list['staff_id'] ?>">
+                                    <button class="btn-danger" style="font-size:1.5rem;"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </div>
+                        </td>
                         </tr>
                         <?php $i++; // Increment the counter ?>
                     <?php endforeach; ?>

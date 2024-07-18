@@ -73,7 +73,7 @@ VALUES (?,?,?,?,?);
                 </div>
             </div>
 
-            <form action="futsalbookform.php" method="post" id="itemIssueForm">
+            <form class="form" action="futsalbookform.php" method="post" id="itemIssueForm">
                 <h3>Book Futsal</h3>
                 <div>
                     <label for="name"><span>Bookers name:</span></label>
