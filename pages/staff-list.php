@@ -30,12 +30,12 @@
                             <td><?= htmlspecialchars($list['staff_join_date']) ?></td>
                             <td>
                             <div class="action-container">
-                                <form class="edit-form" action="#">
+                                <form class="edit-form" action="">
                                 <input type="hidden" name="id" value="<?php echo $list['staff_id'] ?>">
                                 <button class="btn-success" style="font-size:1.5rem;"><i
                                 class="fa-solid fa-pen-to-square"></i></button>
                                 </form>
-                                <form class="delete-form" action="./proccess/deletebookings.php">
+                                <form class="delete-form" action="./proccess/deletestaff.php">
                                     <input type="hidden" name="id" value="<?php echo $list['staff_id'] ?>">
                                     <button class="btn-danger" style="font-size:1.5rem;"><i
                                             class="fa-solid fa-trash"></i></button>

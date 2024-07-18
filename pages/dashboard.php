@@ -179,7 +179,7 @@ $conn->close();
                         <td><?= $list['payment_status'] ?></td>
                         <td>
                             <div class="action-container">
-                                <form class="edit-form" action="#">
+                                <form class="edit-form" action="./editbookings.php">
                                 <input type="hidden" name="id" value="<?php echo $list['booking_id'] ?>">
                                 <button class="btn-success" style="font-size:1.5rem;"><i
                                 class="fa-solid fa-pen-to-square"></i></button>
