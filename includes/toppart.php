@@ -27,7 +27,7 @@
         <div id="sidebar-space" class="sidebar-space"></div>
         <div class="head-container">
             <div class="logo">
-                <button class="secondary-btn" id="toggle">=</button>
+                <button class="toggle-btn" id="toggle"><i class="fa-solid fa-bars fa-2xl"></i></button>
                 <img src="./assets/logo.png" width="70" alt="gogoagoal logo">
             </div>
             <button class="primary-btn"><a href="/issueform.html" style="text-decoration: none; color: #fafafa;">Login

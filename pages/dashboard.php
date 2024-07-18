@@ -178,10 +178,10 @@ $conn->close();
                         <td><?= $list['booking_slot'] ?></td>
                         <td><?= $list['payment_status'] ?></td>
                         <td>
-                            <button class="primary-btn" style="font-size:1.5rem; background-color:green;"><i
-                                    class="fa-solid fa-pen-to-square" style="color:white;"></i></button>
-                            <button class="primary-btn" style="font-size:1.5rem; background-color:red;"><i
-                                    class="fa-solid fa-trash" style="color:white;"></i></button>
+                            <button class="btn-success" style="font-size:1.5rem;"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn-danger" style="font-size:1.5rem;"><i
+                                    class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                 <?php endforeach; ?>
