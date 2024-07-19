@@ -43,11 +43,11 @@ if ($result->num_rows > 0) {
 $bookedSlots = array_column($bookings, 'booking_slot');
 
 
-// FOR date filter
+// FOR search
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET['filterDate'])) {
-        $filterDate = $_GET['filterDate'];
-        $bookedSlotQuery = "SELECT * FROM bookings WHERE booking_date = '$filterDate' ";
+    if (isset($_GET['search'])) {
+        $searchParam = $_GET['search'];
+        $bookedSlotQuery = "SELECT * FROM bookings WHERE initiator = '$searchParam' OR initiator_contact = '$searchParam'";
         $bookingsArr = [];
         $result = $conn->query($bookedSlotQuery);
         if ($result->num_rows > 0) {
@@ -152,9 +152,8 @@ $conn->close();
         <div class="filter-container">
             <form class="filter-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get"
                 style="width:100%; border-radius:none; box-shadow:none; padding:0;margin:0; gap:2rem;">
-                <input type="date" name="filterDate" style="width: 200px;" required>
-                <button class="primary-btn" style="margin-left:2rem;"><i
-                        class="fa-solid fa-filter"></i>&nbsp;Filter</button>
+                <input type="text" name="search" style="width: 200px;" placeholder="Search.." required>
+                <button class="primary-btn" style="margin-left:2rem;"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;Search</button>
             </form>
         </div>
         <table class="booking-details-table">
