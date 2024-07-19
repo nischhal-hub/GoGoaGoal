@@ -1,12 +1,14 @@
 <?php
-$bookingListSql = "SELECT * FROM bookings";
+$currentDate = date("Y-m-d");
+$bookingListSql = "SELECT * FROM bookings WHERE booking_date = '$currentDate'";
+$currentDate = date("Y-m-d");
 $summaryQueries = [
-    "bookingSummarySql" => "SELECT COUNT(*) FROM bookings",
-    "earningSummarySql" => "SELECT SUM(amount) FROM checkout",
-    "expenditureSummarySql" => "SELECT SUM(exp_amount) FROM expenditure",
+    "bookingSummarySql" => "SELECT COUNT(*) FROM bookings WHERE booking_date = '$currentDate'",
+    "earningSummarySql" => "SELECT SUM(amount) FROM checkout WHERE checkout_at = '$currentDate'",
+    "expenditureSummarySql" => "SELECT SUM(exp_amount) FROM expenditure WHERE exp_date = '$currentDate'",
     "staffsSql" => "SELECT COUNT(*) FROM staff"
 ];
-$currentDate = date("Y-m-d");
+
 $bookedSlotQuery = "SELECT * FROM bookings WHERE booking_date = '$currentDate' ";
 
 // FOR FETCHING BOOKING LIST
@@ -60,13 +62,13 @@ $conn->close();
 ?>
 <section>
     <h2>Dashboard</h2>
+
     <div class="summary">
-        <h3>Lifetime Reports</h3>
         <div class="summary-container">
             <div class="box" style="margin-left: 0;">
                 <div class="result">
                     <p><?php echo $resultArray["bookingSummarySql"] ?></p>
-                    <p>Total Bookings</p>
+                    <p>Today's Bookings</p>
                 </div>
                 <div class="icon-container">
                     <i class="fa-brands fa-font-awesome fa-2xl" style="color: var(--primary)"></i>
@@ -76,7 +78,7 @@ $conn->close();
                 <div class="result">
                     <p><?php echo $resultArray["earningSummarySql"] == null ? '0' : $resultArray["earningSummarySql"] ?>
                     </p>
-                    <p>Total Earning</p>
+                    <p>Today's Earning</p>
                 </div>
                 <div class="icon-container">
                     <i class="fa-solid fa-money-bills fa-2xl" style="color: var(--primary)"></i>
@@ -86,7 +88,7 @@ $conn->close();
                 <div class="result">
                     <p><?php echo $resultArray["expenditureSummarySql"] == null ? '0' : $resultArray["expenditureSummarySql"] ?>
                     </p>
-                    <p>Total Expenditure</p>
+                    <p>Today's Expenditure</p>
                 </div>
                 <div class="icon-container">
                     <i class="fa-solid fa-file-invoice-dollar fa-2xl" style="color: var(--primary)"></i>
@@ -103,6 +105,8 @@ $conn->close();
             </div>
         </div>
     </div>
+
+
     <div class="slot-container">
         <h3>Today's Booked slots</h3>
         <table class="greyGridTable">

@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $sql = "SELECT * FROM bookings WHERE booking_id=$id";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    print_r($row);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
