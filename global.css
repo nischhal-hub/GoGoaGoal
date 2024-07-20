@@ -903,3 +903,10 @@ select:focus{
   border-top: 2px solid #eee;
   font-weight: bold;
 }
+
+.download-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2rem;
+}

@@ -1,10 +1,9 @@
 <?php
 $currentDate = date("Y-m-d");
 $bookingListSql = "SELECT * FROM bookings WHERE booking_date = '$currentDate'";
-$currentDate = date("Y-m-d");
 $summaryQueries = [
     "bookingSummarySql" => "SELECT COUNT(*) FROM bookings WHERE booking_date = '$currentDate'",
-    "earningSummarySql" => "SELECT SUM(amount) FROM checkout WHERE checkout_at = '$currentDate'",
+    "earningSummarySql" => "SELECT SUM(amount) FROM checkout WHERE DATE(checkout_at) = '$currentDate'",
     "expenditureSummarySql" => "SELECT SUM(exp_amount) FROM expenditure WHERE exp_date = '$currentDate'",
     "staffsSql" => "SELECT COUNT(*) FROM staff"
 ];

@@ -6,7 +6,35 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 }
-print_r($row);
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $id = $_POST['id'];
+    $bottles = $_POST['bottle'];
+    $rate = $_POST['rate'];
+    $amount = ($bottles * 25) + $rate ;
+    $sql = "UPDATE bookings SET payment_status = 'paid' WHERE booking_id = $id";
+    $invoiceSql = "INSERT INTO checkout (bottles_used, amount, booking_id)
+                    VALUES (?, ?, ?);";
+    if($stmt = $conn->prepare($invoiceSql)){
+        $stmt->bind_param("iii", $bottles, $amount, $id);
+        if ($stmt->execute()) {
+            $result = $conn->query($sql);
+            echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                    var modal = document.getElementById('modal');
+                    modal.style.display = 'block';
+                    var closeBtn = document.getElementsByClassName('close')[0];
+                        closeBtn.onclick = function() {
+                            modal.style.display = 'none';
+                        }
+            });
+            </script>";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+        $stmt->close();
+    }
+}
 ?>
 
 <div class="body-container">
@@ -18,12 +46,11 @@ print_r($row);
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <p id="modal-message"><img src="./assets/icons/icons8-tick.gif"
-                            alt="tick gif">&nbsp;&nbsp;&nbsp;&nbsp;Futsal Booked
-                        Successfully.</p>
+                            alt="tick gif">&nbsp;&nbsp;&nbsp;&nbsp;Checkout Successfull.</p>
                 </div>
             </div>
 
-            <form class="form" action="futsalbookform.php" method="post" id="itemIssueForm">
+            <form class="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="itemIssueForm">
                 <h3>Checkout</h3>
                 <div>
                     <label for="name"><span>Bookers name:</span></label>
@@ -46,7 +73,7 @@ print_r($row);
                     </div>
                     <div style="width: 48%;">
                         <label for="hourlyRate"><span>Hourly rate(in Rs):</span"></label>
-                        <input type="number" name="bottle" id="bookingDate" value="1000" required>
+                        <input type="number" name="rate" id="bookingDate" value="1000" required>
                     </div>
                     <div>
                         <input type="hidden" value="<?php echo $row['booking_id']; ?>" name="id">
