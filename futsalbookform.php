@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($bookersName) || !preg_match("/^[A-Za-z\s]+$/", $bookersName)) {
         $errormsg = "Invalid name";
+        
     }
     if (empty($bookersContact) || !preg_match("/^\d{10}$/", $bookersContact)) {
         $errormsg = "Invalid contact number";
@@ -30,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errormsg = "Payment status is required";
     }
 
+    if(empty($errormsg)){
 
     $sql = "INSERT INTO bookings (initiator, initiator_contact, booking_date, booking_slot, payment_status) 
 VALUES (?,?,?,?,?);
@@ -54,6 +56,7 @@ VALUES (?,?,?,?,?);
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+}
     $conn->close();
 }
 
@@ -109,12 +112,13 @@ VALUES (?,?,?,?,?);
                 </div>
 
                 <div>
-                    <label for="payment">Payment Method:</label>
+                    <input type="hidden" value="pending" name="payment">
+                    <!-- <label for="payment">Payment Method:</label>
                     <select id="payment" name="payment" required>
                         <option value="" disabled selected>Select Payment</option>
                         <option value="paid">Paid</option>
                         <option value="pending">Pending</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div>
                     <button class="secondary-btn" type="submit" id="myBtn" style="width: 100%;">Submit</button>
