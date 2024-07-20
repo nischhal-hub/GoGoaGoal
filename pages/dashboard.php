@@ -11,7 +11,7 @@ $summaryQueries = [
 
 $bookedSlotQuery = "SELECT * FROM bookings WHERE booking_date = '$currentDate' ";
 
-// FOR FETCHING BOOKING LIST
+// for fetching booking list
 $result = $conn->query($bookingListSql);
 $bookingsArr = [];
 $i = 0;
@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-//FOR FETCHING SUMMARY LIST
+//for fetching summary list
 $resultArray = ["bookingSummarySql" => 0, "earningSummarySql" => 0, "expenditureSummarySql" => 0, "staffsSql" => 0];
 foreach ($summaryQueries as $key => $query) {
     if ($result = $conn->query($query)) {
@@ -32,7 +32,7 @@ foreach ($summaryQueries as $key => $query) {
     }
 }
 
-// FOR FETCHING BOOKED SLOTS
+// for fetching booked slots
 $result = $conn->query($bookedSlotQuery);
 $bookings = [];
 if ($result->num_rows > 0) {
@@ -40,10 +40,11 @@ if ($result->num_rows > 0) {
         $bookings[] = $row;
     }
 }
+//creates a array of only booked slots from fetched array bookings.
 $bookedSlots = array_column($bookings, 'booking_slot');
 
 
-// FOR search
+// For search using both initiator name or initiator contact
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET['search'])) {
         $searchParam = $_GET['search'];

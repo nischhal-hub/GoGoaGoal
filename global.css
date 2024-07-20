@@ -812,3 +812,94 @@ select:focus{
   box-shadow: none;
   padding: .2rem;
 }
+.checkout-group{
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+  gap: 2rem;
+}
+
+.bill{
+  border:1px solid var(--platinum);
+  border-radius: 1rem;
+  padding-top: 1rem;
+}
+.bill span:first-child{
+  margin: 1rem;
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.bill h3:first-child{
+  line-height: 1rem;
+  padding-bottom: 0;
+}
+.bill p:first-child{
+  padding-top: 0;
+  text-align: center;
+}
+
+/* ivoice */
+.invoice-box {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+  color: #555;
+}
+
+.invoice-box table {
+  width: 100%;
+  line-height: inherit;
+  text-align: left;
+}
+
+.invoice-box table td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.invoice-box table tr td:nth-child(2) {
+  text-align: right;
+}
+
+.invoice-box table tr.top table td {
+  padding-bottom: 20px;
+}
+
+.invoice-box table tr.top table td.title {
+  font-size: 45px;
+  line-height: 45px;
+  color: #333;
+}
+
+.invoice-box table tr.information table td {
+  padding-bottom: 40px;
+}
+
+.invoice-box table tr.heading td {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.invoice-box table tr.details td {
+  padding-bottom: 20px;
+}
+
+.invoice-box table tr.item td {
+  border-bottom: 1px solid #eee;
+}
+
+.invoice-box table tr.item.last td {
+  border-bottom: none;
+}
+
+.invoice-box table tr.total td:nth-child(4) {
+  border-top: 2px solid #eee;
+  font-weight: bold;
+}

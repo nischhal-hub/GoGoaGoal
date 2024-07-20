@@ -6,11 +6,11 @@
                                         href="./index.php">Dashboard</a></li>
                         <li><span class="sidebar-icon"><i class="fa-solid fa-futbol fa-2xl"></i></span>&nbsp;&nbsp;<a
                                         href="./futsalbookform.php">Book Futsal</a></li>
+                        <li><span class="sidebar-icon"><i class="fa-solid fa-money-bills fa-2xl"></i></span>&nbsp;&nbsp;<a
+                                        href="./checkout.php">Checkout</a></li>
                         <li><span class="sidebar-icon"><i
                                                 class="fa-solid fa-file-invoice-dollar fa-2xl"></i></span>&nbsp;&nbsp;<a
                                         href="/itemrecords.html">Track Expenditure</a></li>
-                        <li><span class="sidebar-icon"><i class="fa-solid fa-money-bills fa-2xl"></i></span>&nbsp;&nbsp;<a
-                                        href="/itemrecords.html">Checkout</a></li>
                         <li><span class="sidebar-icon"><i class="fa-solid fa-users fa-2xl"></i></span>&nbsp;&nbsp;<a
                                         href="./staff.php">Staff</a></li>
                         <li><span class="sidebar-icon"><i
