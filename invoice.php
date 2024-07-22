@@ -1,10 +1,38 @@
 <?php
 include './includes/toppart.php';
+if(isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $jointSql = 'SELECT 
+    bookings.booking_id,
+    bookings.initiator,
+    bookings.initiator_contact,
+    bookings.booking_date,
+    bookings.booking_slot,
+    bookings.payment_status,
+    checkout.bottles_used,
+    checkout.amount,
+    checkout.checkout_at
+FROM 
+    bookings
+LEFT JOIN 
+    checkout ON bookings.booking_id = checkout.booking_id
+WHERE 
+    bookings.booking_id = ?';
+    $stmt = $conn->prepare($jointSql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $result = $result->fetch_assoc();
+}
+
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 <div class="body-container">
     <div id="sidebar-space" class="sidebar-space"></div>
     <div class="container">
+        <div style="margin-bottom: 2rem;">
+            <button class="primary-btn"><a href="./index.php">Go back to home page.</a></button>
+        </div>
         <div class="invoice-box" id="invoice">
             <table>
                 <tr class="top">
@@ -15,8 +43,8 @@ include './includes/toppart.php';
                                     <img src="./assets/logo.png" style="width:60px;">
                                 </td>
                                 <td>
-                                    Invoice #: 00302<br>
-                                    Created: October 18, 2017
+                                    Invoice #: <?php echo $result['booking_id']; ?><br>
+                                    Created: <?php echo $result['checkout_at']; ?>
                                 </td>
                             </tr>
                         </table>
@@ -27,8 +55,8 @@ include './includes/toppart.php';
                         <table>
                             <tr>
                                 <td style="text-align:left;">
-                                    Hello, Philip Brooks.<br>
-                                    Thank you for your order.
+                                    Hello, <?php echo $result['initiator']; ?><br>
+                                    Thank you for playing at our futsal.
                                 </td>
 
                             </tr>
@@ -42,32 +70,35 @@ include './includes/toppart.php';
                     <td>Subtotal</td>
                 </tr>
                 <tr class="item">
-                    <td>Name or Description of item</td>
-                    <td>MH792AM</td>
+                    <td>Water bottles</td>
+                    <td>HAILHYDRA</td>
+                    <td><?php echo $result['bottles_used'];?></td>
+                    <td><?php echo $result['bottles_used']*25; ?></td>
+                </tr>
+                <tr class="item">
+                    <td>Futsal Bookings</td>
+                    <td>PLAYMYHRT</td>
                     <td>1</td>
-                    <td>Rs 100.00</td>
+                    <td><?php echo $result['amount']-($result['bottles_used']*25);?></td>
                 </tr>
                 <tr class="total">
                     <td colspan="3"></td>
-                    <td>Subtotal: Rs 100.00</td>
+                    <td>Subtotal: Rs.<?php echo $result['amount']?> </td>
                 </tr>
                 <tr class="total">
                     <td colspan="3"></td>
-                    <td>Total: Rs 107.00</td>
+                    <td>Total: Rs.<?php echo $result['amount']?></td>
                 </tr>
                 <tr class="information">
                     <td style="text-align:left;">
                         <strong>BILLING INFORMATION</strong><br>
-                        Philip Brooks<br>
-                        134 Madison Ave.<br>
-                        New York NY 00102<br>
-                        United States
+                        <?php echo $result['initiator']; ?><br>
+                        <?php echo $result['initiator_contact'];?><br>
+                        
                     </td>
                     <td style="text-align:left;">
                         <strong>PAYMENT INFORMATION</strong><br>
-                        Credit Card<br>
-                        Card Type: Visa<br>
-                        .... .... .... 1234
+                        Cash<br>
                     </td>
                 </tr>
             </table>

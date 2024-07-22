@@ -7,28 +7,19 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $row = $result->fetch_assoc();
 }
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $bottles = $_POST['bottle'];
     $rate = $_POST['rate'];
-    $amount = ($bottles * 25) + $rate ;
+    $amount = ($bottles * 25) + $rate;
     $sql = "UPDATE bookings SET payment_status = 'paid' WHERE booking_id = $id";
     $invoiceSql = "INSERT INTO checkout (bottles_used, amount, booking_id)
                     VALUES (?, ?, ?);";
-    if($stmt = $conn->prepare($invoiceSql)){
+    if ($stmt = $conn->prepare($invoiceSql)) {
         $stmt->bind_param("iii", $bottles, $amount, $id);
         if ($stmt->execute()) {
             $result = $conn->query($sql);
-            echo "<script>
-            document.addEventListener('DOMContentLoaded', function() {
-                    var modal = document.getElementById('modal');
-                    modal.style.display = 'block';
-                    var closeBtn = document.getElementsByClassName('close')[0];
-                        closeBtn.onclick = function() {
-                            modal.style.display = 'none';
-                        }
-            });
-            </script>";
+            header("Location: invoice.php?id=" . $id);
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -44,7 +35,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             <div id="modal" class="modal show">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
                     <p id="modal-message"><img src="./assets/icons/icons8-tick.gif"
                             alt="tick gif">&nbsp;&nbsp;&nbsp;&nbsp;Checkout Successfull.</p>
                 </div>
@@ -68,18 +58,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </div>
                 <div class="checkout-group">
                     <div style="width: 48%;">
-                        <label for="bottles"><span>Water bottle's used:</span"></label>
+                        <label for="bottles"><span>Water bottle's used:</span></label>
                         <input type="number" name="bottle" id="bottles" value="0" required>
                     </div>
                     <div style="width: 48%;">
-                        <label for="hourlyRate"><span>Hourly rate(in Rs):</span"></label>
-                        <input type="number" name="rate" id="bookingDate" value="1000" required>
+                        <label for="hourlyRate"><span>Hourly rate (in Rs):</span></label>
+                        <input type="number" name="rate" id="hourlyRate" value="1000" required>
                     </div>
                     <div>
                         <input type="hidden" value="<?php echo $row['booking_id']; ?>" name="id">
                     </div>
                 </div>
-
+                <div class="checkout-total" id="checkout-total">
+                    <h3 style="text-align:left;">Total:</h3>
+                    <h2 id="total"></h2>
+                </div>
                 <div>
                     <button class="secondary-btn" type="submit" id="myBtn" style="width: 100%;">Submit</button>
                 </div>
@@ -92,5 +85,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </div>
 </main>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const bottlesInput = document.getElementById('bottles');
+        const hourlyRateInput = document.getElementById('hourlyRate');
+        const totalElement = document.getElementById('total');
+
+        function updateTotal() {
+            const bottles = parseFloat(bottlesInput.value) || 0;
+            const hourlyRate = parseFloat(hourlyRateInput.value) || 0;
+            const total = (bottles*25) + hourlyRate;
+            totalElement.textContent = `Rs. ${total}`;
+        }
+
+        bottlesInput.addEventListener('input', updateTotal);
+        hourlyRateInput.addEventListener('input', updateTotal);
+
+        updateTotal();
+    });
+</script>
 
 </html>

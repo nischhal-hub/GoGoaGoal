@@ -909,4 +909,10 @@ select:focus{
   justify-content: center;
   align-items: center;
   padding-left: 2rem;
+  margin-top: 2rem;
+}
+#checkout-total{
+  font-size: 3rem;
+  font-weight: 700;
+  margin: .5rem 0;
 }
