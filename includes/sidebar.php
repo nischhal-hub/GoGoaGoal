@@ -10,7 +10,7 @@
                                         href="./checkout.php">Checkout</a></li>
                         <li><span class="sidebar-icon"><i
                                                 class="fa-solid fa-file-invoice-dollar fa-2xl"></i></span>&nbsp;&nbsp;<a
-                                        href="/itemrecords.html">Track Expenditure</a></li>
+                                        href="./expenditure.php">Track Expenditure</a></li>
                         <li><span class="sidebar-icon"><i class="fa-solid fa-users fa-2xl"></i></span>&nbsp;&nbsp;<a
                                         href="./staff.php">Staff</a></li>
                         <li><span class="sidebar-icon"><i
