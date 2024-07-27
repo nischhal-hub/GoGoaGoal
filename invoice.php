@@ -2,6 +2,7 @@
 include './includes/toppart.php';
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
+    $perPrice = $_GET['perPrice'];
     $jointSql = 'SELECT 
     bookings.booking_id,
     bookings.initiator,
@@ -10,6 +11,7 @@ if(isset($_GET['id'])) {
     bookings.booking_slot,
     bookings.payment_status,
     checkout.bottles_used,
+    checkout.per_bottle_cost,
     checkout.amount,
     checkout.checkout_at
 FROM 
@@ -18,11 +20,11 @@ LEFT JOIN
     checkout ON bookings.booking_id = checkout.booking_id
 WHERE 
     bookings.booking_id = ?';
-    $stmt = $conn->prepare($jointSql);
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $result = $result->fetch_assoc();
+$stmt = $conn->prepare($jointSql);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$result = $result->fetch_assoc();
 }
 
 ?>
@@ -73,13 +75,13 @@ WHERE
                     <td>Water bottles</td>
                     <td>HAILHYDRA</td>
                     <td><?php echo $result['bottles_used'];?></td>
-                    <td><?php echo $result['bottles_used']*25; ?></td>
+                    <td><?php echo $result['bottles_used']*$result['per_bottle_cost']; ?></td>
                 </tr>
                 <tr class="item">
                     <td>Futsal Bookings</td>
                     <td>PLAYMYHRT</td>
                     <td>1</td>
-                    <td><?php echo $result['amount']-($result['bottles_used']*25);?></td>
+                    <td><?php echo $result['amount']-($result['bottles_used']*$result['per_bottle_cost']);?></td>
                 </tr>
                 <tr class="total">
                     <td colspan="3"></td>

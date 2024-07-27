@@ -11,12 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $bottles = $_POST['bottle'];
     $rate = $_POST['rate'];
-    $amount = ($bottles * 25) + $rate;
+    $perPrice = $_POST['perPrice'];
+    $amount = ($bottles * $perPrice) + $rate;
     $sql = "UPDATE bookings SET payment_status = 'paid' WHERE booking_id = $id";
-    $invoiceSql = "INSERT INTO checkout (bottles_used, amount, booking_id)
+    $invoiceSql = "INSERT INTO checkout (bottles_used, per_bottle_cost, amount, booking_id)
                     VALUES (?, ?, ?);";
     if ($stmt = $conn->prepare($invoiceSql)) {
-        $stmt->bind_param("iii", $bottles, $amount, $id);
+        $stmt->bind_param("iiii", $bottles,$perPrice, $amount, $id);
         if ($stmt->execute()) {
             $result = $conn->query($sql);
             header("Location: invoice.php?id=" . $id);
@@ -57,10 +58,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         disabled>
                 </div>
                 <div class="checkout-group">
-                    <div style="width: 48%;">
-                        <label for="bottles"><span>Water bottle's used:</span></label>
-                        <input type="number" name="bottle" id="bottles" value="0" required>
+                    <div class="checkout-bottle-group">
+                        <div style="width: 60%;">
+                            <label for="bottles"><span>Water bottle's:</span></label>
+                            <input type="number" name="bottle" id="bottles" value="0" required>
+                        </div>
+                        <div style="width: 38%; padding-left: 10%;">
+                            <label for="perPrice"><span>Per price:</span></label>
+                            <input type="number" name="perPrice" id="perPrice" value="25" required>
+                        </div>
                     </div>
+
                     <div style="width: 48%;">
                         <label for="hourlyRate"><span>Hourly rate (in Rs):</span></label>
                         <input type="number" name="rate" id="hourlyRate" value="1000" required>
@@ -90,17 +98,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     document.addEventListener('DOMContentLoaded', function () {
         const bottlesInput = document.getElementById('bottles');
         const hourlyRateInput = document.getElementById('hourlyRate');
+        const perPriceInput = document.getElementById('perPrice');
         const totalElement = document.getElementById('total');
-
+        console.log(perPriceInput)
         function updateTotal() {
             const bottles = parseFloat(bottlesInput.value) || 0;
             const hourlyRate = parseFloat(hourlyRateInput.value) || 0;
-            const total = (bottles*25) + hourlyRate;
+            const perPrice = parseFloat(perPriceInput.value) || 25;
+            const total = (bottles * perPrice) + hourlyRate;
             totalElement.textContent = `Rs. ${total}`;
         }
 
         bottlesInput.addEventListener('input', updateTotal);
         hourlyRateInput.addEventListener('input', updateTotal);
+        perPriceInput.addEventListener('input', updateTotal);
 
         updateTotal();
     });

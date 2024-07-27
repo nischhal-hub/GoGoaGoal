@@ -1,8 +1,8 @@
 -- Create database if not exists
-CREATE DATABASE IF NOT EXISTS gogoagoal;
+CREATE DATABASE IF NOT EXISTS golazo;
 
 -- Use the created database
-USE gogoagoal;
+USE golazo;
 
 -- Create the staff table
 CREATE TABLE IF NOT EXISTS staff (
@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS bookings (
 CREATE TABLE IF NOT EXISTS checkout (
     checkout_id INT AUTO_INCREMENT PRIMARY KEY,
     bottles_used INT NOT NULL,
+    per_bottle_cost DECIMAL(10, 2) NOT NULL,
     amount DECIMAL(10, 2) NOT NULL,
     checkout_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     booking_id INT, 
