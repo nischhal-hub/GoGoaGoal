@@ -24,7 +24,7 @@
                     <?php foreach ($staffsArr as $list): ?>
                         <tr>
                             <td><?= htmlspecialchars($i) ?></td>
-                            <td><?= htmlspecialchars($list['staff_name']) ?></td>
+                            <td><img src="image.php?id=<?php echo htmlspecialchars($list['staff_id']); ?>" alt="avatar" width="50px" height="50px"/><?= htmlspecialchars($list['staff_name']) ?></td>
                             <td><?= htmlspecialchars($list['staff_contact']) ?></td>
                             <td><?= htmlspecialchars($list['staff_email']) ?></td>
                             <td><?= htmlspecialchars($list['staff_join_date']) ?></td>

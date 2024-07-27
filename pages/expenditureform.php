@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="number" id="noOfitems" name="noOfitems" placeholder="2" required>
                 </div>
                 <div>
-                    <label for="expAmount"><span>Expenditure amount:</span"></label>
+                    <label for="expAmount"><span>Expenditure amount(in Rs.):</span"></label>
                     <input type="number" name="amount" id="expAmount" required>
                 </div>
                 <div>

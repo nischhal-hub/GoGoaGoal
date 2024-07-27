@@ -8,6 +8,7 @@ USE golazo;
 CREATE TABLE IF NOT EXISTS staff (
     staff_id INT AUTO_INCREMENT PRIMARY KEY,
     staff_name VARCHAR(255) NOT NULL,
+    staff_avatar MEDIUMBLOB NOT NULL,
     staff_contact VARCHAR(20) NOT NULL,
     staff_email VARCHAR(255),
     staff_join_date DATE NOT NULL
