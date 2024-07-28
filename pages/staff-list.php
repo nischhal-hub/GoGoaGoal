@@ -23,17 +23,17 @@
                         <td colspan="6" style="text-align: center;">No data to show</td>
                     </tr>
                 <?php else: ?>
-                    <?php $i = 1; // Initialize the counter ?>
+                    <?php $i = 1; ?>
                     <?php foreach ($staffsArr as $list): ?>
                         <tr>
                             <td><?= htmlspecialchars($i) ?></td>
-                            <td style="display:flex; align-items:center; justify-content:center;""><?php echo '<img class="avatar-img" src="data:image/jpeg;base64,'.base64_encode($list['staff_avatar']).'"/>'?> <?= htmlspecialchars($list['staff_name'])?> </td>
+                            <td style="display:flex; align-items:center; justify-content:flex-start;""><?php echo '<img class="avatar-img" src="data:image/jpeg;base64,'.base64_encode($list['staff_avatar']).'"/>'?> <?= htmlspecialchars($list['staff_name'])?> </td>
                             <td><?= htmlspecialchars($list['staff_contact']) ?></td>
                             <td><?= htmlspecialchars($list['staff_email']) ?></td>
                             <td><?= htmlspecialchars($list['staff_join_date']) ?></td>
                             <td>
                             <div class="action-container">
-                                <form class="edit-form" action="">
+                                <form class="edit-form" action="./edit-staff.php">
                                 <input type="hidden" name="id" value="<?php echo $list['staff_id'] ?>">
                                 <button class="btn-success" style="font-size:1.5rem;"><i
                                 class="fa-solid fa-pen-to-square"></i></button>
@@ -46,7 +46,7 @@
                             </div>
                         </td>
                         </tr>
-                        <?php $i++; // Increment the counter ?>
+                        <?php $i++; ?>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </table>

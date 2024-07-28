@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div>
                 <button class="primary-btn"><a href="<?php echo $_SERVER['PHP_SELF']; ?>">Add another
                         Staff</a></button>
-                <button class="secondary-btn"><a href="<?php echo $_SERVER['PHP_SELF']; ?>">View Staff</a></button>
+                <button class="secondary-btn" style="color:black;"><a href="./staff.php">View Staff</a></button>
             </div>
         </div>
     </div>

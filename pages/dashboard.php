@@ -47,7 +47,7 @@ $bookedSlots = array_column($bookings, 'booking_slot');
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET['search'])) {
         $searchParam = $_GET['search'];
-        $bookedSlotQuery = "SELECT * FROM bookings WHERE initiator = '$searchParam' OR initiator_contact = '$searchParam'";
+        $bookedSlotQuery = "SELECT * FROM bookings WHERE initiator LIKE '%'. '$searchParam'.'%' OR initiator_contact = '$searchParam'";
         $bookingsArr = [];
         $result = $conn->query($bookedSlotQuery);
         if ($result->num_rows > 0) {
