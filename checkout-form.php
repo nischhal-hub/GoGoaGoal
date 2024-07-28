@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $amount = ($bottles * $perPrice) + $rate;
     $sql = "UPDATE bookings SET payment_status = 'paid' WHERE booking_id = $id";
     $invoiceSql = "INSERT INTO checkout (bottles_used, per_bottle_cost, amount, booking_id)
-                    VALUES (?, ?, ?);";
+                    VALUES (?, ?, ?,?);";
     if ($stmt = $conn->prepare($invoiceSql)) {
         $stmt->bind_param("iiii", $bottles,$perPrice, $amount, $id);
         if ($stmt->execute()) {

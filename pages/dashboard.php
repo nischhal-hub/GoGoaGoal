@@ -159,7 +159,8 @@ $conn->close();
             <form class="filter-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get"
                 style="width:100%; border-radius:none; box-shadow:none; padding:0;margin:0; gap:2rem;">
                 <input type="text" name="search" style="width: 200px;" placeholder="Search.." required>
-                <button class="primary-btn" style="margin-left:2rem;"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;Search</button>
+                <button class="primary-btn" style="margin-left:2rem;"><i
+                        class="fa-solid fa-magnifying-glass"></i>&nbsp;Search</button>
             </form>
         </div>
         <table class="booking-details-table">
@@ -185,13 +186,26 @@ $conn->close();
                         <td><?= $list['initiator_contact'] ?></td>
                         <td><?= $list['booking_date'] ?></td>
                         <td><?= $list['booking_slot'] ?></td>
-                        <td><?= $list['payment_status'] ?></td>
+                        <td>
+                            <?php if ($list['payment_status'] === 'pending') { ?>
+                                <div class="action-container">
+                                    <form class="edit-form" action="./checkout-form.php">
+                                        <input type="hidden" name="id" value="<?php echo $list['booking_id']; ?>">
+                                        <button class="btn-success" style="font-size:1.5rem;">
+                                            <i class="fa-regular fa-credit-card"></i>&nbsp;Checkout
+                                        </button>
+                                    </form>
+                                </div>
+                            <?php } else {
+                                echo $list['payment_status'];
+                            } ?>
+                        </td>
                         <td>
                             <div class="action-container">
                                 <form class="edit-form" action="./editbookings.php">
-                                <input type="hidden" name="id" value="<?php echo $list['booking_id'] ?>">
-                                <button class="btn-success" style="font-size:1.5rem;"><i
-                                class="fa-solid fa-pen-to-square"></i></button>
+                                    <input type="hidden" name="id" value="<?php echo $list['booking_id'] ?>">
+                                    <button class="btn-success" style="font-size:1.5rem;"><i
+                                            class="fa-solid fa-pen-to-square"></i></button>
                                 </form>
                                 <form class="delete-form" action="./proccess/deletebookings.php">
                                     <input type="hidden" name="id" value="<?php echo $list['booking_id'] ?>">

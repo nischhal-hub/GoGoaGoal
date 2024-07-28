@@ -2,7 +2,6 @@
 include './includes/toppart.php';
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
-    $perPrice = $_GET['perPrice'];
     $jointSql = 'SELECT 
     bookings.booking_id,
     bookings.initiator,
