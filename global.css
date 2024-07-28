@@ -316,7 +316,7 @@ input[type="date"]:focus-visible{
 }
 .btn-success {
   background-color: rgba(29, 170, 16, 0.158);
-  color: rgba(33, 197, 18, 0.808);
+  color:rgb(0, 92, 54);
   font-weight: 700;
   font-size: 1.5rem;
   padding: .5rem 1rem;
@@ -325,6 +325,18 @@ input[type="date"]:focus-visible{
 }
 .btn-success a{
   color:rgb(0, 92, 54);
+}
+.btn-paid {
+  background-color: rgba(16, 139, 170, 0.158);
+  color: rgba(0, 9, 139, 0.808);
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: .5rem 1rem;
+  border-radius: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+}
+.btn-paid a{
+  color:rgba(0, 7, 95, 0.993);;
 }
 .btn-danger {
   background-color: rgba(170, 39, 16, 0.158);

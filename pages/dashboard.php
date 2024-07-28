@@ -47,7 +47,7 @@ $bookedSlots = array_column($bookings, 'booking_slot');
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET['search'])) {
         $searchParam = $_GET['search'];
-        $bookedSlotQuery = "SELECT * FROM bookings WHERE initiator LIKE '%'. '$searchParam'.'%' OR initiator_contact = '$searchParam'";
+        $bookedSlotQuery = "SELECT * FROM bookings WHERE initiator LIKE '%". $searchParam."%' OR initiator_contact = '$searchParam'";
         $bookingsArr = [];
         $result = $conn->query($bookedSlotQuery);
         if ($result->num_rows > 0) {
@@ -196,9 +196,16 @@ $conn->close();
                                         </button>
                                     </form>
                                 </div>
-                            <?php } else {
-                                echo $list['payment_status'];
-                            } ?>
+                            <?php } else { ?>
+                                <div class="action-container">
+                                <form class="edit-form" action="./invoice.php">
+                                    <input type="hidden" name="id" value="<?php echo $list['booking_id']; ?>">
+                                    <button class="btn-paid" style="font-size:1.5rem;">
+                                        <i class="fa-solid fa-file-invoice"></i>&nbsp;Download Bill
+                                    </button>
+                                </form>
+                            </div>
+                           <?php } ?>
                         </td>
                         <td>
                             <div class="action-container">

@@ -169,7 +169,27 @@ if ($result->num_rows > 0) {
                             <td><?= $list['initiator_contact'] ?></td>
                             <td><?= $list['booking_date'] ?></td>
                             <td><?= $list['booking_slot'] ?></td>
-                            <td><?= $list['payment_status'] ?></td>
+                            <td>
+                            <?php if ($list['payment_status'] === 'pending') { ?>
+                                <div class="action-container">
+                                    <form class="edit-form" action="./checkout-form.php">
+                                        <input type="hidden" name="id" value="<?php echo $list['booking_id']; ?>">
+                                        <button class="btn-success" style="font-size:1.5rem;">
+                                            <i class="fa-regular fa-credit-card"></i>&nbsp;Checkout
+                                        </button>
+                                    </form>
+                                </div>
+                            <?php } else { ?>
+                                <div class="action-container">
+                                <form class="edit-form" action="./invoice.php">
+                                    <input type="hidden" name="id" value="<?php echo $list['booking_id']; ?>">
+                                    <button class="btn-paid" style="font-size:1.5rem;">
+                                        <i class="fa-solid fa-file-invoice"></i>&nbsp;Download Bill
+                                    </button>
+                                </form>
+                            </div>
+                           <?php } ?>
+                        </td>
                             <td>
                                 <div class="action-container">
                                     <form class="edit-form" action="./editbookings.php">
