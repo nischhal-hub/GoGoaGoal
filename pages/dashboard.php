@@ -69,6 +69,7 @@ $conn->close();
                 <div class="result">
                     <p><?php echo $resultArray["bookingSummarySql"] ?></p>
                     <p>Today's Bookings</p>
+                    <p><button class="btn-success"><a href="./futsalbookform.php">+ Add Booking</a></button></p>
                 </div>
                 <div class="icon-container">
                     <i class="fa-brands fa-font-awesome fa-2xl" style="color: var(--primary)"></i>
@@ -79,6 +80,7 @@ $conn->close();
                     <p><?php echo $resultArray["earningSummarySql"] == null ? '0' : $resultArray["earningSummarySql"] ?>
                     </p>
                     <p>Today's Earning</p>
+                    <p><button class="btn-success"><a href="./checkout.php">+ Add Checkout</a></button></p>
                 </div>
                 <div class="icon-container">
                     <i class="fa-solid fa-money-bills fa-2xl" style="color: var(--primary)"></i>
@@ -89,6 +91,8 @@ $conn->close();
                     <p><?php echo $resultArray["expenditureSummarySql"] == null ? '0' : $resultArray["expenditureSummarySql"] ?>
                     </p>
                     <p>Today's Expenditure</p>
+                    <p><button class="btn-success"><a href="./expenditure.php">+ Add Expenditure</a></button></p>
+
                 </div>
                 <div class="icon-container">
                     <i class="fa-solid fa-file-invoice-dollar fa-2xl" style="color: var(--primary)"></i>
@@ -98,6 +102,8 @@ $conn->close();
                 <div class="result">
                     <p><?php echo $resultArray["staffsSql"] ?></p>
                     <p>Total Staffs</p>
+                    <p><button class="btn-success"><a href="./staff.php">+ Add Staff</a></button></p>
+
                 </div>
                 <div class="icon-container">
                     <i class="fa-solid fa-users fa-2xl" style="color:var(--primary)"></i>

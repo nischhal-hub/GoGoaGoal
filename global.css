@@ -323,6 +323,9 @@ input[type="date"]:focus-visible{
   border-radius: 0.5rem;
   font-family: "Montserrat", sans-serif;
 }
+.btn-success a{
+  color:rgb(0, 92, 54);
+}
 .btn-danger {
   background-color: rgba(170, 39, 16, 0.158);
   color: rgba(170, 39, 16, 0.808);
