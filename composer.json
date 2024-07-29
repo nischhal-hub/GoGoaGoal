@@ -1,0 +1,14 @@
+{
+    "name": "nischal/gogoagoal",
+    "description": "A futsal arena management web application.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nischhal-nub",
+            "email": "nischalbh51@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
