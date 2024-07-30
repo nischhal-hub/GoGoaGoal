@@ -201,7 +201,7 @@ $conn->close();
                                 <form class="edit-form" action="./invoice.php">
                                     <input type="hidden" name="id" value="<?php echo $list['booking_id']; ?>">
                                     <button class="btn-paid" style="font-size:1.5rem;">
-                                        <i class="fa-solid fa-file-invoice"></i>&nbsp;Download Bill
+                                        <i class="fa-solid fa-file-invoice"></i>&nbsp;See Invoice
                                     </button>
                                 </form>
                             </div>
