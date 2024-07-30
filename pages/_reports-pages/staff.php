@@ -1,3 +1,1 @@
-<h1>
-    Good staff
-</h1>
+<?php include './pages/staff-list.php';
