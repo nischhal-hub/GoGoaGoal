@@ -7,23 +7,6 @@
   --platinum: hsla(120, 4%, 91%, 1);
   --secondary: hsla(120, 2%, 81%, 0.3);
 
-  --gradient-top: linear-gradient(0deg, #ff7f30ff, #ffffffff);
-  --gradient-right: linear-gradient(90deg, #ff7f30ff, #ffffffff);
-  --gradient-bottom: linear-gradient(180deg, #ff7f30ff, #ffffffff);
-  --gradient-left: linear-gradient(270deg, #ff7f30ff, #ffffffff);
-  --gradient-top-right: linear-gradient(45deg, #ff7f30ff, #ffffffff);
-  --gradient-bottom-right: linear-gradient(135deg, #ff7f30ff, #ffffffff);
-  --gradient-top-left: linear-gradient(225deg, #ff7f30ff, #ffffffff);
-  --gradient-bottom-left: linear-gradient(315deg, #ff7f30ff, #ffffffff);
-
-  /* Radial Gradients */
-  --gradient-radial: radial-gradient(circle, #ff7f30ff, #ffffffff);
-  --gradient-radial-reverse: radial-gradient(circle, #ffffffff, #ff7f30ff);
-
-  /* Conic Gradients */
-  --gradient-conic: conic-gradient(from 0deg, #ff7f30ff, #ffffffff);
-  --gradient-conic-reverse: conic-gradient(from 0deg, #ffffffff, #ff7f30ff);
-
   --font-primary: "Montserrat", sans-serif;
   --font-secondary: "Hind", sans-serif;
 }
@@ -940,3 +923,4 @@ select:focus{
   margin-block-end: 0;
   
 }
+

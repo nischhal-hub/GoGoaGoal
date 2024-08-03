@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
                     class="fa-solid fa-search"></i>&nbsp;Search</button>
         </form>
 
-        <button class="primary-btn"><a href="./add-staff.php" style="display:flex;"><i
+        <button class="primary-btn"><a href="./expenditure.php" style="display:flex;"><i
                     class="fa-solid fa-plus"></i>&nbsp;Expenditure</a></button>
 
     </div>

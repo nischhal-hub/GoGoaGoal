@@ -25,6 +25,9 @@ CREATE TABLE IF NOT EXISTS users (
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
+INSERT INTO users (user_name, user_password, user_role) VALUES ('admin', '$2y$10$WSpH0G1io8qBKimw6JBF..qpY8sH/UhTf5mg5.rxXjVTbloQ8Cb6.', 'ADMIN');
+INSERT INTO users (user_name, user_password, user_role) VALUES ('staff', '$2y$10$LHVULzOqbZCLmeU6KIHDLuPsz1Y/5Z5zCtasmmUkNmGtkutuIHyba', 'STAFF');
+
 
 -- Create the bookings table
 CREATE TABLE IF NOT EXISTS bookings (

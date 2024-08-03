@@ -1,0 +1,194 @@
+:root {
+    /* CSS HSL */
+    --primary: hsla(23, 100%, 59%, 1);
+    --primary-transparent: hsla(23, 100%, 59%, 0.9);
+    --text: hsla(0, 0%, 12%, 1);
+    --background: hsla(0, 0%, 100%, 1);
+    --platinum: hsla(120, 4%, 91%, 1);
+    --secondary: hsla(120, 2%, 81%, 0.3);
+
+    --font-primary: "Montserrat", sans-serif;
+    --font-secondary: "Hind", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-primary);
+    color: var(--text);
+    background-color: var(--background);
+}
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+/* login */
+.login-container {
+    width: 100%;
+    display: flex;
+}
+
+.login-section-right {
+    width: 50%;
+    height: 100vh;
+    background-image: url("https://i.pinimg.com/originals/a2/b2/bf/a2b2bf56eb257db3d3240e2ca98188c7.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: red;
+    position: relative;
+}
+.login-section-right::before,
+.login-section-right::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+.login-section-left {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    width: 60%;
+    margin: 1rem auto;
+    background-color: #fff;
+    padding: 2rem 2rem;
+    border-radius: .8rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.form h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type='date'],
+input[type='file'],
+input[type='password'],
+textarea {
+    width: 97%;
+    padding: .4rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type='date']:focus,
+input[type='file']:focus,
+textarea:focus {
+    outline: none;
+    background-color: #f7f7f7;
+    border-radius: .5rem;
+}
+
+.primary-btn {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.info{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+    position: absolute;
+    z-index: 9999;
+    position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+}
+
+.info img{
+    width: 15rem;
+}
+.info p{
+    font-family: var(--primary);
+    color: white;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999999;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    width: 40%;
+    font-family: var(--font-primary);
+    
+  }
+  .modal-content p {
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+  }
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 2.8rem;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

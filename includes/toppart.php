@@ -1,4 +1,12 @@
-<?php require './conn/conn.php'; ?>
+<?php require './conn/conn.php';
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.php");
+    exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,18 +28,19 @@
 </head>
 
 <body>
-    <main> 
-    <?php include 'sidebar.php'?>
-    <section>
-    <header>
-        <div id="sidebar-space" class="sidebar-space"></div>
-        <div class="head-container">
-            <div class="logo">
-                <button class="toggle-btn" id="toggle"><i class="fa-solid fa-bars fa-2xl"></i></button>
-                <img src="./assets/logo.png" width="70" alt="gogoagoal logo">
-            </div>
-            <button class="primary-btn"><a href="/issueform.html" style="text-decoration: none; color: #fafafa;">Login
-                </a></button>
-        </div>
-    </header>
-    </section>
+    <main>
+        <?php include 'sidebar.php' ?>
+        <section>
+            <header>
+                <div id="sidebar-space" class="sidebar-space"></div>
+                <div class="head-container">
+                    <div class="logo">
+                        <button class="toggle-btn" id="toggle"><i class="fa-solid fa-bars fa-2xl"></i></button>
+                        <img src="./assets/logo.png" width="70" alt="gogoagoal logo">
+                    </div>
+                    <form action="./proccess/auth/logout.php" method="POST">
+                        <button type="submit" name="logout" class="primary-btn">Logout</button>
+                    </form>
+                </div>
+            </header>
+        </section>
