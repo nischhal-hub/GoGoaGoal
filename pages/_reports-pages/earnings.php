@@ -1,6 +1,6 @@
 <?php
 
-$sql = "SELECT DATE(checkout_at) as date, SUM(amount) as total_amount FROM checkout WHERE checkout_at>=DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY) GROUP BY DATE(checkout_at) ORDER BY checkout_at DESC";
+$sql = "SELECT DATE(checkout_at) as date, SUM(amount) as total_amount FROM checkout WHERE checkout_at>=DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY) GROUP BY DATE(checkout_at) ";
 $result = $conn->query($sql);
 $incomeArr = [];
 $groupedIncome = [];

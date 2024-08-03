@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT DATE(booking_date) as date, COUNT(*) as total_bookings FROM bookings WHERE booking_date>=DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY) GROUP BY DATE(booking_date) ORDER BY booking_date DESC";
+$sql = "SELECT DATE(booking_date) as date, COUNT(*) as total_bookings FROM bookings WHERE booking_date>=DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY) GROUP BY DATE(booking_date)";
 $countSql = "SELECT COUNT(*) FROM bookings";
 $result = $conn->query($sql);
 $totalResult = $conn->query($countSql);
