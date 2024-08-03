@@ -1,28 +1,61 @@
+<?php
+$sql = "SELECT DATE(booking_date) as date, COUNT(*) as total_bookings FROM bookings WHERE booking_date>=DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY) GROUP BY DATE(booking_date) ORDER BY booking_date DESC";
+$countSql = "SELECT COUNT(*) FROM bookings";
+$result = $conn->query($sql);
+$totalResult = $conn->query($countSql);
+$bookingArr = [];
+$total = 0;
+$prevAmount = 0;
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $bookingArr[] = $row;
+        $total += $row['total_bookings'];
+    }
+}
+?>
 <section class="reports">
     <div class="slots-graph">
-        <div>
+    <div>
             <h3>Booking reports</h3>
-            <div class="booking-grid-table">
+            <div class="income-grid-table">
                 <table>
+                    <p>Last 10 days</p>
                     <tr>
                         <th>Date</th>
                         <th>No of bookings</th>
                         <th>Status</th>
                     </tr>
+                    <?php foreach ($bookingArr as $booking): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($booking['date']) ?></td>
+                            <td><?= htmlspecialchars($booking['total_bookings']) ?></td>
+                            <td><?php
+                            if($prevAmount == 0) {
+                                $percentage = 100;
+                            }
+                            else{
+                                $percentage =number_format(abs(($booking['total_bookings'] - $prevAmount)) / $prevAmount * 100,1) ;
+                            }
+                            if ($booking['total_bookings'] > $prevAmount) { ?>
+                                <div class="up">
+                                    <div><img src="./assets/icons/icons8-up-52.png" alt="arrow" height="18" width="18"></div>
+                                    <p><?php echo $percentage ?> % increased than previous</p>
+                                </div>
+                            <?php } else { ?>
+                                <div class="up">
+                                <img src="./assets/icons/icons8-down.png" alt="arrow" height="18" width="18">
+                                <span><?php echo $percentage?> % decreased than previous</span>
+                                </div>
+                            <?php } ?>
+                            </td>
+                            <?php $prevAmount = $booking['total_bookings']; ?>
+                        </tr>
+                    <?php endforeach; ?>
                     <tr>
-                        <td>2024/07/2</td>
-                        <td>10</td>
-                        <td><img src="./assets/icons/icons8-up-52.png" alt="arrow" height="18" width="18"></td>
-                    </tr>
-                    <tr>
-                        <td>2024/07/2</td>
-                        <td>10</td>
-                        <td><img src="./assets/icons/icons8-down.png" alt="arrow" height="18" width="18"></td>
-                    </tr>
-                    <tr>
-                        <td>2024/07/2</td>
-                        <td>10</td>
-                        <td><img src="./assets/icons/icons8-up-52.png" alt="arrow" height="18" width="18"></td>
+                        <td style="font-weight: 700;">Total:</td>
+                        <td style="font-weight: 700;"><?= $total ?></td>
+                        <td></td>
                     </tr>
                 </table>
             </div>

@@ -547,7 +547,7 @@ th {
   width: 100%;
 }
 .slots-graph {
-  width: 50%;
+  width: 100%;
   margin: 1rem;
   /* border:1px solid red; */
 }
@@ -555,38 +555,6 @@ th {
   width: 50%;
   margin: 1rem;
 } */
-.booking-grid-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.booking-grid-table td {
-  font-size: 1.4rem;
-}
-
-.booking-grid-table th,
-.booking-grid-table td {
-  border: 1px solid #ddd;
-  padding: 0.5rem;
-  text-align: center;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.booking-grid-table td:nth-child(even) {
-  background-color: var(--primary);
-}
-.booking-grid-table th:nth-child(even) {
-  background-color: var(--primary);
-}
-
-.booking-grid-table th:hover {
-  background-color: var(--primary-transparent);
-}
-.booking-grid-table td:hover {
-  background-color: var(--primary-transparent);
-}
-
 .income-grid-table table {
   width: 100%;
   border-collapse: collapse;
